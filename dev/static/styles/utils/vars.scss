@@ -1,14 +1,25 @@
-// Colors
-$white: #fff;
-$black: #000;
+$color-black: #1F2528;
+$color-white: #ffffff;
+$color-yellow: #FBDA75;
+$color-lightyellow: #F2C94C;
+$color-blue: #2F80ED;
+$color-darkblue: #232731;
+$color-lightBlue: #B7CFEF;
+$blue-hover: #1868D4;
+$color-palegray: #EAEFF7;
+$color-grey: #98A0AA;
+$color-lightgreen: #ECFFF0;
+$color-green: #219653;
+$color-orange: #EE7E1A;
 
-// Sizes
-$base-font-size: 16px;
+$base-color: #C4C4C4;
+$font-primary: 'Raleway', serif;
+$font-secondary: 'Ubuntu', serif;
+$font-alt: 'Roboto', serif;
 
-$tablet: 768;
-$large: 1024;
-$desktop: 1280;
-
-$content: 1000px;
-
-// Fonts
+/*media screens*/
+$laptop-xl: 1920px;
+$laptop-lg: 1680px;
+$laptop-md: 1440px;
+$laptop-sm: 1200px;
+$tablet: 768px;

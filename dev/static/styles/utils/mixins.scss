@@ -1,28 +1,88 @@
-@mixin box($width,$height: $width) {
-  width: $width;
-  height: $height;
-}
-@mixin cover-background {
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
+@mixin font-setting($family, $size, $line-height, $font-width, $color) {
+  font-family: $family;
+  font-size: $size;
+  line-height: $line-height;
+  font-weight: $font-width;
+  color: $color;
 }
 
-$units: 1px !default;
-@mixin screen($res-first, $res-last: $res-first) {
-  @if $res-first == $res-last {
-    @media screen and (max-width: if(unitless($res-first), ($res-first - 1) *$units, $res-first)) {
-      @content;
-    }
-  }
-  @else if $res-first < $res-last {
-    @media screen and (min-width: if(unitless($res-first), $res-first*$units, $res-first)) and (max-width: if(unitless($res-last), $res-last*$units, $res-last)) {
-      @content;
-    }
+@mixin pseudo($pos: absolute, $content: '') {
+  @include flex-setting(column, center, center);
+
+  content: $content;
+  position: $pos;
+}
+
+@mixin flex-setting($direction, $justify, $align) {
+  display: flex;
+  flex-direction: $direction;
+  justify-content: $justify;
+  align-items: $align;
+}
+
+@mixin ul-nostyle {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+@mixin checkbox-default {
+  display: inline-block;
+  vertical-align: middle;
+  cursor: pointer;
+
+  position: relative;
+
+  padding-left: 1.25rem;
+
+  @media only screen and (min-width: 360px) {
+    padding-left: 1.625rem;
   }
 }
-@mixin min-screen($res) {
-  @media screen and (min-width: if(unitless($res), $res*$units, $res)) {
-    @content;
+
+@mixin custom-checkbox {
+  position: absolute;
+  content: "";
+  display: block;
+
+  width: 14px;
+  height: 14px;
+  border-radius: 0;
+  border: 1px solid #191911;
+
+  top: -3px;
+  left: 0;
+
+  background-color: transparent;
+
+  @media only screen and (min-width: 360px) {
+    width: 16px;
+    height: 16px;
+
+    top: -3px;
+  }
+}
+
+@mixin checkbox-checked {
+  position: absolute;
+  content: "";
+  display: block;
+
+  width: 17px;
+  height: 18px;
+
+  top: -6px;
+  left: 1px;
+
+  background-image: url('../images/content/tick.png');
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: contain;
+
+  @media only screen and (min-width: 360px) {
+    width: 21px;
+    height: 22px;
+    top: -7px;
+    left: 1px;
   }
 }
