@@ -12,4 +12,6 @@
 }
 //@include font-face('Raleway', '../fonts/Raleway/Raleway', 500, 'normal');
 //@include font-face('Ubuntu', '../fonts/ubuntu/ubuntu', 500, 'normal');
-@include font-face('Roboto', '../fonts/roboto/', 500, 'normal');
+@include font-face('Roboto', '../fonts/roboto/Roboto-Regular', 400, 'normal');
+@include font-face('Roboto', '../fonts/roboto/Roboto-Medium', 500, 'normal');
+@include font-face('Roboto', '../fonts/roboto/Roboto-Bold', 700, 'normal');
