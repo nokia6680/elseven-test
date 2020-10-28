@@ -9,10 +9,244 @@
 
 .card-2__filters {
   width: 643px;
+
+  & h2 {
+    margin-bottom: 2px;
+    @include my-font-setting(32px, 48px, 700, $color-black, $font-primary);
+  }
+
+  & .card-2__tags,
+  & .card-2__availability {
+    display: inline-block;
+    margin-bottom: 31px;
+  }
+
+  & .card-2__tags {
+    margin-right: 31px;
+    @include my-font-setting(14px, 20px, 400, $color-grey);
+  }
+
+  & .card-2__availability {
+    @include my-font-setting(16px, 24px, 400, $color-green);
+
+    &--miss {
+      color: $color-red;
+    }
+  }
 }
 
-.card-2__filter-material {
+.card-2__filter {
   display: flex;
   flex-flow: row wrap;
+  margin-bottom: 33px;
+
+  & .card-2__filter-tag {
+    display: block;
+    width: 100%;
+    margin-bottom: 19px;
+    @include my-font-setting(14px, 20px, 700);
+  }
+
+  & .card-2__filter-group {
+    display: flex;
+    align-items: center;
+    align-content: center;
+    margin-right: 24px;
+  }
 }
+
+.card-2__label-radio {
+  position: relative;
+  padding-left: 36px;
+  @include my-font-setting(16px, 24px, 400);
+
+  &::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 24px;
+    height: 24px;
+    border: 1px solid $color-grey;
+    border-radius: 50%;
+    z-index: 0;
+  }
+
+  &::before {
+    content: "";
+    position: absolute;
+    display: none;
+    top: 8px;
+    left: 8px;
+    width: 8px;
+    height: 8px;
+    background-color: white;
+    border-radius: 50%;
+    z-index: 1;
+  }
+}
+
+.card-2__filter-group input[type="radio"] {
+  &:checked ~ .card-2__label-radio::after {
+    border: 1px solid $color-blue;
+    background-color: $color-blue;
+  }
+
+  &:checked ~ .card-2__label-radio::before {
+    display: block;
+  }
+}
+
+.card-2__filter-input {
+  &:not(:last-of-type) {
+    margin-right: 24px;
+  }
+
+  &--side-height,
+  &--side-quantity {
+    width: 245px;
+  }
+
+  &--quantity {
+    width: 105px;
+  }
+
+  & .card-2__filter-tag {
+    margin-bottom: 12px;
+  }
+
+  & .card-2__input-quantity {
+    position: relative;
+
+    & input {
+      width: 100%;
+      height: 42px;
+      @include my-font-setting(16px, 24px, 400);
+      text-align: center;
+      border: 1px solid $color-grey;
+      border-radius: 3px;
+      background-color: $color-white;
+
+      &::-webkit-outer-spin-button,
+      &::-webkit-inner-spin-button {
+        margin: 0;
+        -webkit-appearance: none;
+        -moz-appearance:textfield;
+      }
+
+      &:hover,
+      &:focus {
+        border-color: $color-black;
+      }
+    }
+
+    & .minus,
+    & .plus {
+      position: absolute;
+      top: 50%;
+      font-size: 26px;
+      color: #A2A2A2;
+      cursor: pointer;
+      transform: translateY(-50%);
+
+      &:hover,
+      &:focus {
+        color: $color-black;
+      }
+
+      &:active {
+        opacity: 0.8;
+      }
+    }
+
+    & .minus {
+      left: 14px;
+      width: 15px;
+      height: 39px;
+
+      &::before {
+        content: "";
+        position: absolute;
+        top: 50%;
+        width: 12px;
+        height: 2px;
+        background-color: #A2A2A2;
+        border-radius: 1px;
+        transform: translateY(-50%);
+      }
+
+      &:hover::before,
+      &:focus::before {
+        background-color: $color-black;
+      }
+
+      &:active::before {
+        opacity: 0.8;
+      }
+    }
+
+    & .plus {
+      right: 12px;
+    }
+  }
+
+  & .selectric {
+    height: 42px;
+    border: 1px solid $color-grey;
+    border-radius: 3px;
+    background-color: $color-white;
+  }
+
+  & .selectric .label {
+    height: auto;
+    margin: 9px 38px 9px 12px;
+    @include my-font-setting(16px, 24px, 400);
+  }
+
+  & .selectric .button {
+    height: 40px;
+    color: $color-black;
+    background-color: $color-white;
+
+    &::after {
+      border-top-color: $color-black;
+    }
+  }
+
+  & .selectric-items {
+    color: $color-grey;
+    background-color: $color-palegray;
+    border: 1px solid $color-grey;
+
+    & li.highlighted {
+      color: $color-black;
+      background: $color-grey;
+    }
+
+    & li:hover {
+      color: $color-black;
+      background: $color-grey;
+    }
+  }
+
+  & .selectric-hover .selectric {
+    border-color: $color-black;
+
+    & .button {
+      color: $color-grey;
+
+      &::after {
+        border-top-color: $color-grey;;
+      }
+    }
+
+  }
+}
+
+.card-2__price {
+  margin-top: 32px;
+  @include my-font-setting(28px, 42px, 700);
+}
+
+
 

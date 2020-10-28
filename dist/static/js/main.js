@@ -1,5 +1,5 @@
 "use strict";
 
 $(function () {
-  $('select').selectric();
+  $('.selectric').selectric();
 });

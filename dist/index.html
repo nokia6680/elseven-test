@@ -1,15 +1,15 @@
 <!DOCTYPE html><html lang="ru-RU"><head><meta charset="utf-8"><title>Главная страница</title><!--[if IE]><meta http-equiv="X-UA-Compatible" content="IE = edge"><![endif]--><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="keywords" content=""><link rel="stylesheet" type="text/css" href="static/css/styles.css"></head><body><div class="wrapper"><section class="cards card-2">
 <div class="cards__breadcrumbs-wrapper">
-<ul class="cards__breadcrumbs"><li><a class="breadcrumb__link" href="#" target="_self">Каталог</a></li><li><a class="breadcrumb__link" href="#" target="_self">Хлебные формы</a></li><li><a class="breadcrumb__link" href="#" target="_self">Тостовые</a></li><li><a class="breadcrumb__link" href="#" target="_self">Тостерная №1</a></li></ul>
+<ul class="cards__breadcrumbs"><li><a class="breadcrumb__link" href="#" target="_self">Каталог</a></li><li><a class="breadcrumb__link" href="#" target="_self">Хлебные формы</a></li><li><a class="breadcrumb__link" href="#" target="_self">Тостовые</a></li><li><a class="breadcrumb__link" href="#" target="_self">Противень 600х400х200 багет</a></li></ul>
 </div>
 <div class="card-2__content cards-container">
-<img src="images/content/card-2-example.jpg" width="373" height="240" >
+<img class="cards__img cards__img--new" src="images/content/card-2-example.jpg" width="373" height="240" >
 <div class="card-2__filters">
 <h2>Противень 600х400х20 багет</h2>
-<span>SKU Л011</span>
-<span>Нет в наличии</span>
-<div class="card-2__filter-material">
-<span>Материал</span>
+<span class="card-2__tags">SKU Л011</span>
+<span class="card-2__availability card-2__availability--miss">Нет в наличии</span>
+<div class="card-2__filter">
+<span class="card-2__filter-tag">Материал</span>
 <div class="card-2__filter-group">
 <input class="visually-hidden" id="material-1" name="material" type="radio" checked>
 <label class="card-2__label-radio" for="material-1">Углеродистая сталь</label>
@@ -23,46 +23,45 @@
 <label class="card-2__label-radio" for="material-3">Нержавеющая сталь</label>
 </div>
 </div>
-<div class="card-2__filter-thickness">
-<span>Толщина</span>
+<div class="card-2__filter">
+<span class="card-2__filter-tag">Толщина</span>
 <div class="card-2__filter-group">
 <input class="visually-hidden" id="thickness-1" name="thickness" type="radio" checked>
-<label class="card-2__label-radio" for="thickness-1">Алюминий А5Н</label>
+<label class="card-2__label-radio" for="thickness-1">1.5 мм</label>
 </div>
 <div class="card-2__filter-group">
 <input class="visually-hidden" id="thickness-2" name="thickness" type="radio" checked>
-<label class="card-2__label-radio" for="thickness-2">Нержавеющая сталь</label>
+<label class="card-2__label-radio" for="thickness-2">2.0 мм</label>
 </div>
 </div>
-<div class="card-2__filter-proportions">
-<div class="selectric-wrapper">
-<div class="selectric-hide-select">
-<select id="select-delivery" tabindex="0">
-<option value="never-mind">Неважно</option>
-<option value="courier-delivery">Курьерская доставка</option>
-<option value="post-delivery">Почтовая доставка</option>
-<option value="postamat-delivery">Постаматы и ПВЗ</option>
-<option value="shops-mi">Магазины Мосигра</option>
-</select>
-</div>
-<div class="selectric">
-<span class="label">Неважно</span>
-<b class="button">▾</b>
-</div>
-<div class="selectric-items">
-<div class="selectric-scroll">
-<ul>
-<li data-index="never-mind" class="selected highlighted">Неважно</li>
-<li data-index="courier-delivery">Курьерская доставка</li>
-<li data-index="post-delivery">Почтовая доставка</li>
-<li data-index="postamat-delivery">Постаматы и ПВЗ</li>
-<li data-index="shops-mi">Магазины Мосигра</li>
+<div class="card-2__filter">
+<div class="card-2__filter-input card-2__filter-input--side-height">
+<span class="card-2__filter-tag">Высота бортов</span>
+<ul class="selectric">
+<li data-index="10mm">10 мм</li>
+<li data-index="20mm">12 мм</li>
+<li data-index="30mm">14 мм</li>
+<li data-index="50mm">16 мм</li>
 </ul>
 </div>
+<div class="card-2__filter-input card-2__filter-input--side-quantity">
+<span class="card-2__filter-tag">Количество бортов</span>
+<ul class="selectric">
+<li data-index="4-sides">4 борта</li>
+<li data-index="3-sides">3 борта</li>
+<li data-index="2-sides">2 борта</li>
+</ul>
 </div>
-<input class="selectric-input" tabindex="0">
+<div class="card-2__filter-input card-2__filter-input--quantity">
+<span class="card-2__filter-tag">Количество</span>
+<div class="card-2__input-quantity">
+<span class="minus"></span>
+<span class="plus">+</span>
+<input type="number" id="quantity" name="quantity" min="1" value="1">
+</div>
+</div>
+<span class="card-2__price">1211 ₽</span>
 </div>
 </div>
 </div>
-</div>
-</section></div><!--script(src="static/js/vendor/jquery-3.3.1.min.js")--><!--script(src="static/js/vendor/libs.js")--><script src="static/js/main.js"></script></body></html>
+</section></div><script src="static/js/vendor/jquery-3.3.1.min.js"></script><script src="static/js/vendor/jquery.selectric.js"></script><script src="static/js/vendor/libs.js"></script><script src="static/js/main.js"></script></body></html>
