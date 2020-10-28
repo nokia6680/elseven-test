@@ -6,6 +6,14 @@
   color: $color;
 }
 
+@mixin my-font-setting($size, $line-height, $font-width, $color: $color-black, $family: $font-alt) {
+  font-size: $size;
+  line-height: $line-height;
+  font-weight: $font-width;
+  color: $color;
+  font-family: $family;
+}
+
 @mixin pseudo($pos: absolute, $content: '') {
   @include flex-setting(column, center, center);
 

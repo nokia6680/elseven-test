@@ -1,0 +1,13 @@
+.card-2__content {
+  display: flex;
+  flex-flow: row wrap;
+
+  & img {
+    margin-right: 32px;
+  }
+}
+
+.card-2__filters {
+  width: 643px;
+}
+
