@@ -9,3 +9,9 @@ mixin icon(name,mod)
 mixin breadcrumb(link, name)
 	li
 		a(href="" +link target="_self").breadcrumb__link=name
+
+mixin cat-type(id, link, image, name)
+	li(id=id).catalog__item
+		a(href="" +link target="_self").catalog__link=link
+			img(src="static/images/content/ " +image + '.png' alt="" +name).catalog__image
+			b.catalog__name=name
