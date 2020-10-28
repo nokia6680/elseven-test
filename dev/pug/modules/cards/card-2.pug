@@ -4,7 +4,7 @@
             +breadcrumb('catalog.html', 'Каталог')
             +breadcrumb('#', 'Хлебные формы')
             +breadcrumb('#', 'Тостовые')
-            +breadcrumb('#', 'Противень 600х400х20')
+            +breadcrumb('#', 'Тостерная №1')
         </ul>
     </div>
     <div class="card-2__content cards-container">
@@ -14,7 +14,59 @@
             <span>SKU Л011</span>
             <span>Нет в наличии</span>
             <div class="card-2__filter-material">
-                <input>
+                <span>Материал</span>
+                <div class="card-2__filter-group">
+                    <input class="visually-hidden" id="material-1" name="material" type="radio" checked>
+                    <label class="card-2__label-radio" for="material-1">Углеродистая сталь</label>
+                </div>
+                <div class="card-2__filter-group">
+                    <input class="visually-hidden" id="material-2" name="material" type="radio" checked>
+                    <label class="card-2__label-radio" for="material-2">Алюминий А5Н</label>
+                </div>
+                <div class="card-2__filter-group">
+                    <input class="visually-hidden" id="material-3" name="material" type="radio" checked>
+                    <label class="card-2__label-radio" for="material-3">Нержавеющая сталь</label>
+                </div>
+            </div>
+            <div class="card-2__filter-thickness">
+                <span>Толщина</span>
+                <div class="card-2__filter-group">
+                    <input class="visually-hidden" id="thickness-1" name="thickness" type="radio" checked>
+                    <label class="card-2__label-radio" for="thickness-1">Алюминий А5Н</label>
+                </div>
+                <div class="card-2__filter-group">
+                    <input class="visually-hidden" id="thickness-2" name="thickness" type="radio" checked>
+                    <label class="card-2__label-radio" for="thickness-2">Нержавеющая сталь</label>
+                </div>
+            </div>
+            <div class="card-2__filter-proportions">
+                <div class="selectric-wrapper">
+                    <div class="selectric-hide-select">
+                        <select id="select-delivery" tabindex="0">
+                            <option value="never-mind">Неважно</option>
+                            <option value="courier-delivery">Курьерская доставка</option>
+                            <option value="post-delivery">Почтовая доставка</option>
+                            <option value="postamat-delivery">Постаматы и ПВЗ</option>
+                            <option value="shops-mi">Магазины Мосигра</option>
+                        </select>
+                    </div>
+                    <div class="selectric">
+                        <span class="label">Неважно</span>
+                        <b class="button">▾</b>
+                    </div>
+                    <div class="selectric-items">
+                        <div class="selectric-scroll">
+                        <ul>
+                            <li data-index="never-mind" class="selected highlighted">Неважно</li>
+                            <li data-index="courier-delivery">Курьерская доставка</li>
+                            <li data-index="post-delivery">Почтовая доставка</li>
+                            <li data-index="postamat-delivery">Постаматы и ПВЗ</li>
+                            <li data-index="shops-mi">Магазины Мосигра</li>
+                        </ul>
+                    </div>
+                </div>
+                <input class="selectric-input" tabindex="0">
+                </div>
             </div>
         </div>
     </div>
