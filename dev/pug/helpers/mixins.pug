@@ -12,6 +12,13 @@ mixin breadcrumb(link, name)
 
 mixin cat-type(id, link, image, name)
 	li(id=id).catalog__item
-		a(href="" +link target="_self").catalog__link=link
+		a(href="" +link target="_self").catalog__link
 			img(src="static/images/content/ " +image + '.png' alt="" +name).catalog__image
 			b.catalog__name=name
+
+
+mixin features-item(icon, title, text)
+	li.features__item
+		span(class="features__icon " +icon
+		h3.features__name=title
+		p.features__description=text
