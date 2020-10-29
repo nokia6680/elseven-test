@@ -1,0 +1,231 @@
+.card-2__filter-input {
+  &--forms-in-section {
+    width: 198px;
+  }
+
+  &--form-type {
+    width: 292px;
+  }
+
+  & .card-2__filter-tag {
+    margin-bottom: 12px;
+  }
+
+  & .card-2__input-quantity {
+    position: relative;
+
+    & input {
+      width: 100%;
+      height: 42px;
+      @include my-font-setting(16px, 24px, 400);
+      text-align: center;
+      border: 1px solid $color-grey;
+      border-radius: 3px;
+      background-color: $color-white;
+
+      &::-webkit-outer-spin-button,
+      &::-webkit-inner-spin-button {
+        margin: 0;
+        -webkit-appearance: none;
+        -moz-appearance:textfield;
+      }
+
+      &:hover,
+      &:focus {
+        border-color: $color-black;
+      }
+    }
+
+    & .minus,
+    & .plus {
+      position: absolute;
+      top: 50%;
+      font-size: 26px;
+      color: #A2A2A2;
+      cursor: pointer;
+      transform: translateY(-50%);
+
+      &:hover,
+      &:focus {
+        color: $color-black;
+      }
+
+      &:active {
+        opacity: 0.8;
+      }
+    }
+
+    & .minus {
+      left: 14px;
+      width: 15px;
+      height: 39px;
+
+      &::before {
+        content: "";
+        position: absolute;
+        top: 50%;
+        width: 12px;
+        height: 2px;
+        background-color: #A2A2A2;
+        border-radius: 1px;
+        transform: translateY(-50%);
+      }
+
+      &:hover::before,
+      &:focus::before {
+        background-color: $color-black;
+      }
+
+      &:active::before {
+        opacity: 0.8;
+      }
+    }
+
+    & .plus {
+      right: 12px;
+    }
+  }
+
+  & .selectric {
+    height: 42px;
+    border: 1px solid $color-grey;
+    border-radius: 3px;
+    background-color: $color-white;
+  }
+
+  & .selectric .label {
+    height: auto;
+    margin: 9px 38px 9px 12px;
+    @include my-font-setting(16px, 24px, 400);
+  }
+
+  & .selectric .button {
+    height: 40px;
+    color: $color-black;
+    background-color: $color-white;
+
+    &::after {
+      border-top-color: $color-black;
+    }
+  }
+
+  & .selectric-items {
+    color: $color-grey;
+    background-color: $color-palegray;
+    border: 1px solid $color-grey;
+
+    & li.highlighted {
+      color: $color-black;
+      background: $color-grey;
+    }
+
+    & li:hover {
+      color: $color-black;
+      background: $color-grey;
+    }
+  }
+
+  & .selectric-hover .selectric {
+    border-color: $color-black;
+
+    & .button {
+      color: $color-grey;
+
+      &::after {
+        border-top-color: $color-grey;;
+      }
+    }
+  }
+}
+
+.card-2__price {
+  @include my-font-setting(28px, 42px, 700);
+}
+
+@media (max-width: $laptop-sm) {
+  .card-2__filters {
+    width: 460px;
+
+    & h2 {
+      margin-bottom: 8px;
+      @include my-font-setting(28px, 42px, 700, $color-black, $font-primary);
+    }
+
+    & .card-2__tags,
+    & .card-2__availability {
+      margin-bottom: 33px;
+    }
+  }
+
+  .card-2__filter-input {
+    &:not(:last-of-type) {
+      margin-right: 0;
+    }
+
+    &:nth-of-type(2n-1) {
+      margin-right: 32px;
+    }
+
+    &--side-height,
+    &--side-quantity {
+      width: 214px;
+    }
+  }
+
+  .card-2__price {
+    margin-top: 27px;
+    @include my-font-setting(28px, 42px, 700);
+  }
+}
+
+@media (max-width: $tablet) {
+  .card-2__content {
+    flex-flow: column;
+
+    & img {
+      margin-right: 0;
+      margin-bottom: 33px;
+    }
+  }
+
+  .card-2__filters {
+    width: 100%;
+
+    & h2 {
+      margin-bottom: 7px;
+    }
+  }
+
+  .card-2__label-radio {
+    margin-bottom: 24px;
+  }
+
+  .card-2__filter {
+    margin-bottom: 9px;
+  }
+
+  .card-2__filter-input {
+    margin-bottom: 24px;
+
+    &:nth-of-type(2n-1) {
+      margin-right: 0;
+    }
+
+    &--side-height,
+    &--side-quantity {
+      width: 100%;
+    }
+
+    &--quantity {
+      margin-top: 8px;
+    }
+  }
+
+  .card-2__price {
+    margin-top: 36px;
+    margin-left: 33px;
+    @include my-font-setting(28px, 42px, 700);
+  }
+}
+
+
