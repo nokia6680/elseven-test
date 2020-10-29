@@ -3,8 +3,8 @@ section.main__category.category
     
     .category__breadcrumbs
         ul.breadcrumbs
-            +breadcrumb('catalog.html', 'Каталог')
-            +breadcrumb('#', 'Хлебные формы')
+            +breadcrumb('catalog.html', 'Каталог', '')
+            +breadcrumb('#', 'Хлебные формы', 'active')
     
     .category__wrapper
         aside.category__aside.aside
@@ -32,8 +32,10 @@ section.main__category.category
                     select
                         option(value="hide") По алфавиту
                         option(value="alfabet") По алфавиту
-                        option(value="sku") По артикулу
-                        option(value="latest") Новинки
+                        option(value="popular") По популярности
+                        option(value="to-high") По возрастанию цены
+                        option(value="to-low") По уменьшению цены
+                        option(value="latest") По обновлению
                         
                 // Данные по отфильтрованным позициям
                 .filter__stats

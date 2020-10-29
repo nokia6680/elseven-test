@@ -6,9 +6,9 @@ mixin icon(name,mod)
 		svg(class="svg-sprite-icon icon-" + name)
 			use(xlink:href="static/images/sprite/symbol/sprite.svg#" + name)
 
-mixin breadcrumb(link, name)
+mixin breadcrumb(link, name, type)
 	li
-		a(href="" +link target="_self").breadcrumb__link=name
+		a(class="breadcrumb__link " +type href="" +link target="_self")=name
 
 mixin cat-type(id, link, image, name)
 	li(id=id).catalog__item
