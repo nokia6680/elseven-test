@@ -1,6 +1,6 @@
 .cards {
   padding-top: 64px;
-  padding-bottom: 80px;
+  padding-bottom: 47px;
   border-bottom: 3px solid $color-palegray;
 }
 
@@ -12,4 +12,33 @@
 
 .cards__breadcrumbs-wrapper {
   background-color: $color-palegray;
+}
+
+.cards__img {
+  position: relative;
+
+  &--new {
+    &::before {
+      content: "";
+      position: absolute;
+      top: 4px;
+      right: 4px;
+      width: 44px;
+      height: 44px;
+      background-color: $color-yellow;
+      border-radius: 50%;
+      box-shadow: 0px 3px 20px -3px rgba(46, 51, 63, 0.55);
+    }
+
+    &::after {
+      content: "NEW";
+      position: absolute;
+      top: 20px;
+      right: 14px;
+      width: 24px;
+      height: 24px;
+      @include my-font-setting(12px, 12px, 700, $color-black);
+      text-transform: uppercase;
+    }
+  }
 }
