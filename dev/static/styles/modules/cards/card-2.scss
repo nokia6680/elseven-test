@@ -38,7 +38,7 @@
 .card-2__filter {
   display: flex;
   flex-flow: row wrap;
-  margin-bottom: 33px;
+  margin-bottom: 8px;
 
   & .card-2__filter-tag {
     display: block;
@@ -57,6 +57,7 @@
 
 .card-2__label-radio {
   position: relative;
+  margin-bottom: 25px;
   padding-left: 36px;
   @include my-font-setting(16px, 24px, 400);
 
@@ -98,6 +99,8 @@
 }
 
 .card-2__filter-input {
+  margin-bottom: 32px;
+
   &:not(:last-of-type) {
     margin-right: 24px;
   }
@@ -239,14 +242,97 @@
         border-top-color: $color-grey;;
       }
     }
-
   }
 }
 
 .card-2__price {
-  margin-top: 32px;
   @include my-font-setting(28px, 42px, 700);
 }
 
+@media (max-width: $laptop-sm) {
+  .card-2__filters {
+    width: 460px;
+
+    & h2 {
+      margin-bottom: 8px;
+      @include my-font-setting(28px, 42px, 700, $color-black, $font-primary);
+    }
+
+    & .card-2__tags,
+    & .card-2__availability {
+      margin-bottom: 33px;
+    }
+  }
+
+  .card-2__filter-input {
+    &:not(:last-of-type) {
+      margin-right: 0;
+    }
+
+    &:nth-of-type(2n-1) {
+      margin-right: 32px;
+    }
+
+    &--side-height,
+    &--side-quantity {
+      width: 214px;
+    }
+  }
+
+  .card-2__price {
+    margin-top: 27px;
+    @include my-font-setting(28px, 42px, 700);
+  }
+}
+
+@media (max-width: $tablet) {
+  .card-2__content {
+    flex-flow: column;
+
+    & img {
+      margin-right: 0;
+      margin-bottom: 33px;
+    }
+  }
+
+  .card-2__filters {
+    width: 100%;
+
+    & h2 {
+      margin-bottom: 7px;
+    }
+  }
+
+  .card-2__label-radio {
+    margin-bottom: 24px;
+  }
+
+  .card-2__filter {
+    margin-bottom: 9px;
+  }
+
+  .card-2__filter-input {
+    margin-bottom: 24px;
+
+    &:nth-of-type(2n-1) {
+      margin-right: 0;
+    }
+
+    &--side-height,
+    &--side-quantity {
+      width: 100%;
+    }
+
+    &--quantity {
+      margin-top: 8px;
+    }
+  }
+
+  .card-2__price {
+    margin-top: 36px;
+    margin-left: 33px;
+    @include my-font-setting(28px, 42px, 700);
+  }
+}
 
 

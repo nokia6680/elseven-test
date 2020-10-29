@@ -1,6 +1,6 @@
 .cards {
   padding-top: 64px;
-  padding-bottom: 47px;
+  padding-bottom: 72px;
   border-bottom: 3px solid $color-palegray;
 }
 
@@ -16,6 +16,8 @@
 
 .cards__img {
   position: relative;
+  width: 373px;
+  height: 240px;
 
   &--new {
     &::before {
@@ -40,5 +42,39 @@
       @include my-font-setting(12px, 12px, 700, $color-black);
       text-transform: uppercase;
     }
+  }
+}
+
+@media (max-width: $laptop-sm) {
+  .cards {
+    padding-bottom: 54px;
+    border-bottom: none;
+  }
+
+  .cards-container {
+    width: 768px;
+    padding: 0 31px;
+  }
+
+  .cards__img {
+    width: 214px;
+    height: 138px;
+  }
+}
+
+@media (max-width: $tablet) {
+  .cards {
+    padding-top: 32px;
+    padding-bottom: 31px;
+  }
+
+  .cards-container {
+    width: 320px;
+    padding: 0 24px;
+  }
+
+  .cards__img {
+    width: 272px;
+    height: 175px;
   }
 }

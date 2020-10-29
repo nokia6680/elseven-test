@@ -6,10 +6,7 @@
   display: flex;
   align-content: center;
   align-items: center;
-  width: 1200px;
-  height: 40px;
-  margin: 0 auto;
-  padding: 0 76px;
+  min-height: 40px;
 
   & li {
     margin-right: 13px;
@@ -60,5 +57,37 @@
 
   & a:active {
     opacity: 0.6;
+  }
+}
+
+@media (max-width: $laptop-sm) {
+  .cards .cards__breadcrumbs {
+    margin-bottom: 64px;
+  }
+}
+
+@media (max-width: $tablet) {
+  .cards .cards__breadcrumbs {
+    flex-flow: row wrap;
+    margin-bottom: 48px;
+    padding-top: 8px;
+    padding-bottom: 2px;
+
+    & li {
+      margin-bottom: 6px;
+    }
+
+    & a  {
+      @include my-font-setting(14px, 20px, 400);
+
+      &::after {
+        content: '';
+        position: absolute;
+        top: 5px;
+        right: -1px;
+        border: 4px solid transparent;
+        border-left: 4px solid $color-grey;
+      }
+    }
   }
 }

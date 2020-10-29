@@ -1,3 +1,7 @@
 $(function() {
-    $('.selectric').selectric();
+    $('.selectric').selectric({
+        disableOnMobile: false,
+        nativeOnMobile: false
+        }
+    );
 });
