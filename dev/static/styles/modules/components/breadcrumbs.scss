@@ -1,15 +1,17 @@
-.cards .cards__breadcrumbs {
-  margin-bottom: 80px;
+.breadcrumbs {
+  background-color: $color-palegray;
 }
 
-.cards__breadcrumbs {
+.breadcrumbs-list {
   display: flex;
+  flex-flow: row wrap;
   align-content: center;
   align-items: center;
   min-height: 40px;
+  margin-bottom: 80px;
 
   & li {
-    margin-right: 13px;
+    margin: 8px 13px 8px 0;
   }
 
   & a  {
@@ -61,13 +63,13 @@
 }
 
 @media (max-width: $laptop-sm) {
-  .cards .cards__breadcrumbs {
+  .breadcrumbs-list {
     margin-bottom: 64px;
   }
 }
 
 @media (max-width: $tablet) {
-  .cards .cards__breadcrumbs {
+  .breadcrumbs-list {
     flex-flow: row wrap;
     margin-bottom: 48px;
     padding-top: 8px;

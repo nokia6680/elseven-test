@@ -1,49 +1,50 @@
 <section class="cards card-2">
-    <div class="cards__breadcrumbs-wrapper">
-        <ul class="cards__breadcrumbs cards-container">
+    <div class="breadcrumbs">
+        <ul class="breadcrumbs-list cards-container">
             +breadcrumb('catalog.html', 'Каталог')
             +breadcrumb('#', 'Хлебные формы')
             +breadcrumb('#', 'Тостовые')
             +breadcrumb('#', 'Тостерная №1')
-            //+breadcrumb('#', 'Противень 600х400х200 багет')
         </ul>
     </div>
-    <div class="card-2__content cards-container">
-        <img class="cards__img cards__img--new" src="images/content/card-2-example.jpg" width="373" height="240" >
-        <div class="card-2__filters">
+    <div class="cards__content cards-container">
+        <div class="cards__img-wrapper cards__img-wrapper--new">
+            <img class="cards__img cards__img--new" src="static/images/content/card-2-example.jpg" width="373" height="240" >
+        </div>
+        <div class="cards__filters">
             //<h2>Противень 600х400х20 багет</h2>
             <h2>Тостерная №1</h2>
-            <span class="card-2__tags">SKU Л011</span>
-            <span class="card-2__availability card-2__availability--miss">Нет в наличии</span>
-            <div class="card-2__filter">
-                <span class="card-2__filter-tag">Материал</span>
-                <div class="card-2__filter-group">
+            <span class="cards__tags">SKU Л011</span>
+            <span class="cards__availability cards__availability--miss">Нет в наличии</span>
+            <div class="cards__filter">
+                <span class="cards__filter-tag">Материал</span>
+                <div class="cards__filter-group">
                     <input class="visually-hidden" id="material-1" name="material" type="radio" checked>
-                    <label class="card-2__label-radio" for="material-1">Углеродистая сталь</label>
+                    <label class="cards__label-radio" for="material-1">Углеродистая сталь</label>
                 </div>
-                <div class="card-2__filter-group">
+                <div class="cards__filter-group">
                     <input class="visually-hidden" id="material-2" name="material" type="radio" checked>
-                    <label class="card-2__label-radio" for="material-2">Алюминий А5Н</label>
+                    <label class="cards__label-radio" for="material-2">Алюминий А5Н</label>
                 </div>
-                <div class="card-2__filter-group">
+                <div class="cards__filter-group">
                     <input class="visually-hidden" id="material-3" name="material" type="radio" checked>
-                    <label class="card-2__label-radio" for="material-3">Нержавеющая сталь</label>
+                    <label class="cards__label-radio" for="material-3">Нержавеющая сталь</label>
                 </div>
             </div>
-            <div class="card-2__filter">
-                <span class="card-2__filter-tag">Толщина</span>
-                <div class="card-2__filter-group">
+            <div class="cards__filter">
+                <span class="cards__filter-tag">Толщина</span>
+                <div class="cards__filter-group">
                     <input class="visually-hidden" id="thickness-1" name="thickness" type="radio" checked>
-                    <label class="card-2__label-radio" for="thickness-1">1.5 мм</label>
+                    <label class="cards__label-radio" for="thickness-1">1.5 мм</label>
                 </div>
-                <div class="card-2__filter-group">
+                <div class="cards__filter-group">
                     <input class="visually-hidden" id="thickness-2" name="thickness" type="radio" checked>
-                    <label class="card-2__label-radio" for="thickness-2">2.0 мм</label>
+                    <label class="cards__label-radio" for="thickness-2">2.0 мм</label>
                 </div>
             </div>
-            <div class="card-2__filter">
-                <div class="card-2__filter-input card-2__filter-input--side-height">
-                    <span class="card-2__filter-tag">Высота бортов</span>
+            <div class="cards__filter">
+                <div class="cards__filter-input cards__filter-input--side-height">
+                    <span class="cards__filter-tag">Высота бортов</span>
                     <ul class="selectric">
                         <li data-index="10mm">10 мм</li>
                         <li data-index="20mm">12 мм</li>
@@ -51,24 +52,25 @@
                         <li data-index="50mm">16 мм</li>
                     </ul>
                 </div>
-                <div class="card-2__filter-input card-2__filter-input--side-quantity">
-                    <span class="card-2__filter-tag">Количество бортов</span>
+                <div class="cards__filter-input cards__filter-input--side-quantity">
+                    <span class="cards__filter-tag">Количество бортов</span>
                     <ul class="selectric">
                         <li data-index="4-sides">4 борта</li>
                         <li data-index="3-sides">3 борта</li>
                         <li data-index="2-sides">2 борта</li>
                     </ul>
                 </div>
-                <div class="card-2__filter-input card-2__filter-input--quantity">
-                    <span class="card-2__filter-tag">Количество</span>
-                    <div class="card-2__input-quantity">
+                <div class="cards__filter-input cards__filter-input--quantity">
+                    <span class="cards__filter-tag">Количество</span>
+                    <div class="cards__input-quantity">
                         <span class="minus"></span>
                         <span class="plus">+</span>
                         <input type="number" id="quantity" name="quantity" min="1" value="1">
                     </div>
                 </div>
-                <span class="card-2__price">1211 ₽</span>
+                <span class="cards__price">1211 ₽</span>
             </div>
+            <button class="cards__button-in-cart visually-hidden" href="#">Добавить в корзину</button>
         </div>
     </div>
 </section>

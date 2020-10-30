@@ -1,0 +1,59 @@
+<section class="cards card-4">
+    <div class="breadcrumbs">
+        <ul class="breadcrumbs-list cards-container">
+            +breadcrumb('catalog.html', 'Каталог')
+            +breadcrumb('#', 'Хлебные формы')
+            +breadcrumb('#', 'Тостовые')
+            +breadcrumb('#', 'Тостерная №1')
+        </ul>
+    </div>
+    <div class="cards__content cards-container">
+        <div class="cards__img-wrapper cards__img-wrapper--new">
+          <img class="cards__img" src="static/images/content/card-4-example.jpg" width="373" height="240">
+        </div>
+        <div class="cards__filters">
+            <h2>Кольцо</h2>
+            <span class="cards__tags">SKU Л011</span>
+            <span class="cards__availability">В наличии</span>
+            <div class="cards__filter">
+                <div class="cards__filter-input cards__filter-input--thickness">
+                    <span class="cards__filter-tag">Толщина</span>
+                    <p>1 мм</p>
+                </div>
+                <div class="cards__filter-input cards__filter-input--diameter">
+                    <span class="cards__filter-tag">Диаметр</span>
+                    <ul class="selectric">
+                        <li data-index="90">90</li>
+                        <li data-index="100">100</li>
+                        <li data-index="110">110</li>
+                        <li data-index="120">120</li>
+                        <li data-index="130">130</li>
+                        <li data-index="140">140</li>
+                        <li data-index="150">150</li>
+                        <li data-index="160">160</li>
+                    </ul>
+                </div>
+                <div class="cards__filter-input cards__filter-input--height">
+                    <span class="cards__filter-tag">Высота</span>
+                    <ul class="selectric">
+                        <li data-index="40">40</li>
+                        <li data-index="50">50</li>
+                        <li data-index="60">60</li>
+                        <li data-index="70">70</li>
+                        <li data-index="80">80</li>
+                    </ul>
+                </div>
+                <div class="cards__filter-input cards__filter-input--quantity">
+                    <span class="cards__filter-tag">Количество</span>
+                    <div class="cards__input-quantity">
+                        <span class="minus"></span>
+                        <span class="plus">+</span>
+                        <input type="number" id="quantity" name="quantity" min="1" value="1">
+                    </div>
+                </div>
+                <span class="cards__price">1211 ₽</span>
+            </div>
+            <button class="cards__button-in-cart" href="#">Добавить в корзину</button>
+        </div>
+    </div>
+</section>
