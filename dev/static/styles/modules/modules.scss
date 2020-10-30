@@ -9,5 +9,12 @@
         "cards/card-1",
         "cards/card-2";
 @import "content/catalog";
+@import "content/category";
+
+@import "content/aside.scss";
+@import "content/filter.scss";
+@import "content/types-list";
+@import "content/goods-list";
+@import "content/pagination";
 // Компоненты
 @import "components/breadcrumbs";

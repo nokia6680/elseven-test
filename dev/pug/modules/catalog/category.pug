@@ -2,7 +2,7 @@ section.main__category.category
     h1.category__title Хлебные формы
     
     .category__breadcrumbs
-        ul.breadcrumbs
+        ul.breadcrumbs.cards__breadcrumbs
             +breadcrumb('catalog.html', 'Каталог', '')
             +breadcrumb('#', 'Хлебные формы', 'active')
     
@@ -16,20 +16,25 @@ section.main__category.category
                 +aside-link('Люльки', 'Тостовые', 'Прямоугольные', 'Овальные', 'Батонницы', 'Круглые', 'Формы из листового металла')
                 +aside-link('Столы', 'Тостовые', 'Прямоугольные', 'Овальные', 'Батонницы', 'Круглые', 'Формы из листового металла')
                 +aside-link('Стеллажи', 'Тостовые', 'Прямоугольные', 'Овальные', 'Батонницы', 'Круглые', 'Формы из листового металла')
-        .category__content.content
-            
-            .content__filter.filter
+        .category__content
+            .category__filter.filter
                 // Фильтр по цене
                 .filter__price
-                    select
-                        option(value="hide") Все
-                        option(value="all") Все
-                        option(value="cheap-first") Сначала дешевле
-                        option(value="cheap-last") Сначала дороже
-                
+                    button(type="button").filter__price-open Цена: 
+                        span Все
+                    .filter__price-data
+                        input(type="text" value="0").from
+                        input(type="text" value="0").to
+                    .filter__price-body
+                        .filter__price-controls
+                            input(type="text" value="0").js-input-from
+                            input(type="text" value="0").js-input-to
+                        .filter__price-choose
+                            input(type="text" name="my_range" value="").js-range-slider
                 // Фильтр сортировки
                 .filter__sort
-                    select
+                    span.filter__sort-title Сортировка: 
+                    select.selectic-2
                         option(value="hide") По алфавиту
                         option(value="alfabet") По алфавиту
                         option(value="popular") По популярности
@@ -45,8 +50,8 @@ section.main__category.category
                         span.filter__text.all (всего 127 товаров)
             
             // Список для подкатегорий
-            .content__wrapper
-                ul.content__types.types-list
+            .category__items
+                ul.category__types.types-list
                     +types-item('category-1', '#', 'category-1', 'Тостовые')
                     +types-item('category-2', '#', 'category-2', 'Прямоугольные')
                     +types-item('category-3', '#', 'category-3', 'Овальные')
@@ -54,22 +59,21 @@ section.main__category.category
                     +types-item('category-5', '#', 'category-5', 'Круглые')
                     +types-item('category-6', '#', 'category-6', 'Формы из листового металла')
                     
-                ul.content__goods.goods-list
-                    +goods-item('goods-1', '#', 'goods-1', 'New', 'Тостерная №1', 'SKU Л011', '250 ₽')
-                    +goods-item('goods-2', '#', 'goods-2', 'New', 'Тостерная №1', 'SKU Л011', '250 ₽')
-                    +goods-item('goods-3', '#', 'goods-3', 'New', 'Тостерная №1', 'SKU Л011', '250 ₽')
-                    +goods-item('goods-4', '#', 'goods-4', 'New', 'Тостерная №1', 'SKU Л011', '250 ₽')
-                    +goods-item('goods-5', '#', 'goods-5', 'New', 'Тостерная №1', 'SKU Л011', '250 ₽')
-                    +goods-item('goods-6', '#', 'goods-6', 'New', 'Тостерная №1', 'SKU Л011', '250 ₽')
-                    +goods-item('goods-7', '#', 'goods-7', 'New', 'Тостерная №1', 'SKU Л011', '250 ₽')
-                    +goods-item('goods-8', '#', 'goods-8', 'New', 'Тостерная №1', 'SKU Л011', '250 ₽')
-                    +goods-item('goods-9', '#', 'goods-9', 'New', 'Тостерная №1', 'SKU Л011', '250 ₽')
-                    +goods-item('goods-10', '#', 'goods-10', 'New', 'Тостерная №1', 'SKU Л011', '250 ₽')
+                ul.category__goods.goods-list
+                    +goods-item('goods-1', '#', 'goods-1', 'New', 'Тостерная №1', 'SKU ЛО11', '250 ₽')
+                    +goods-item('goods-2', '#', 'goods-2', 'New', 'Тостерная №1', 'SKU ЛО11', '250 ₽')
+                    +goods-item('goods-3', '#', 'goods-3', 'New', 'Тостерная №1', 'SKU ЛО11', '250 ₽')
+                    +goods-item('goods-4', '#', 'goods-4', 'New', 'Тостерная №1', 'SKU ЛО11', '250 ₽')
+                    +goods-item('goods-5', '#', 'goods-5', 'New', 'Тостерная №1', 'SKU ЛО11', '250 ₽')
+                    +goods-item('goods-6', '#', 'goods-6', 'New', 'Тостерная №1', 'SKU ЛО11', '250 ₽')
+                    +goods-item('goods-7', '#', 'goods-7', 'New', 'Тостерная №1', 'SKU ЛО11', '250 ₽')
+                    +goods-item('goods-8', '#', 'goods-8', 'New', 'Тостерная №1', 'SKU ЛО11', '250 ₽')
             
-            .content__pagination.pagination
-                button(type="button").pagination__prev
-                +pagination('1', '2', '3', '4', '..', '10')
-                button(type="button").pagination__next
+            .category__pagination.pagination
+                .pagination__wrapper
+                    button(type="button").pagination__prev.inactive
+                    +pagination('1', '2', '3', '...', '10')
+                    button(type="button").pagination__next
                 
                 .pagination__stats
                     span.filter__text Показано с 

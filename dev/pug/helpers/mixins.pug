@@ -32,21 +32,21 @@ mixin ship-item(image, title, date)
 mixin aside-link(title, ...items)
 	li.aside__item
 		h3.aside__name=title
-			.aside__controls
-				each link in items
-					a(href="#" target="_self").aside__link=link
+		.aside__controls
+			each link in items
+				a(href="#" target="_self").aside__link=link
 
 mixin types-item(id, link, image, name)
 	li(id=id).types-list__item
 		a(href="" +link target="_self").types-list__link
-			img(src="static/images/content/" +image + '.png' alt="" +name).types-list__image
+			img(src="static/images/content/" +image + '.jpg' alt="" +name).types-list__image
 			b.types-list__name=name
 
 mixin goods-item(id, link, image, sign, name, sku, price)
 	li(id=id).goods-list__item
 		span.goods-list__sign=sign
 		a(href="" +link target="_self").goods-list__link
-			img(src="static/images/content/" +image + '.png' alt="" +name).goods-list__image
+			img(src="static/images/content/" +image + '.jpg' alt="" +name).goods-list__image
 			h3.goods-list__name=name
 			span.goods-list__sku=sku
 			b.goods-list__price=price
