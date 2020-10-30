@@ -14,10 +14,8 @@
   background-color: $color-palegray;
 }
 
-.cards__img {
+.cards__img-wrapper {
   position: relative;
-  width: 373px;
-  height: 240px;
 
   &--new {
     &::before {
@@ -30,6 +28,7 @@
       background-color: $color-yellow;
       border-radius: 50%;
       box-shadow: 0px 3px 20px -3px rgba(46, 51, 63, 0.55);
+      z-index: 1;
     }
 
     &::after {
@@ -41,8 +40,15 @@
       height: 24px;
       @include my-font-setting(12px, 12px, 700, $color-black);
       text-transform: uppercase;
+      z-index: 1;
     }
   }
+}
+
+.cards__img {
+  position: relative;
+  width: 373px;
+  height: 240px;
 }
 
 @media (max-width: $laptop-sm) {
