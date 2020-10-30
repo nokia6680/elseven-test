@@ -12,12 +12,16 @@ html(lang="ru-RU")
 		meta(name="viewport" content="width=device-width,initial-scale=1")
 		meta(name="keywords" content="")
 		link(rel="stylesheet" type='text/css' href="static/css/styles.css")
+		link(rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ion-rangeslider/2.3.1/css/ion.rangeSlider.min.css")
 	body
 		//include ../modules/header/header
 		include ../modules/catalog/category
 		//include ../modules/footer/footer
         
-		//script(src="static/js/vendor/jquery-3.3.1.min.js")
-		//script(src="static/js/vendor/libs.js")
+		script(src="static/js/vendor/jquery-3.3.1.min.js")
+		script(src="https://cdnjs.cloudflare.com/ajax/libs/ion-rangeslider/2.3.1/js/ion.rangeSlider.min.js")
+		script(src="static/js/vendor/libs.js")
+		script(src="static/js/vendor/jquery.selectric.js")
+		script(src="static/js/price.js")
 		script(src="static/js/main.js")
 		block script

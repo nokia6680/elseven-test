@@ -20,7 +20,6 @@
         border-left: 1px solid $color-palegray;
         grid-template-columns: 50% 50%;
         grid-auto-rows: minmax(191px, 1fr);
-        grid-gap: 1px;
     }
 
     &__item {
