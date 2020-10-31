@@ -13,7 +13,7 @@
 
         position: relative;
 
-        margin-bottom: 1.125rem;
+        margin-bottom: 1.75rem;
     }
 
     &__price-open {
@@ -47,7 +47,7 @@
 
                 top: 0.5rem;
                 transform: rotate(90deg);
-                right: 0.5rem;
+                right: 0.25rem;
 
                 transition: 0.2s linear;
             }
@@ -85,6 +85,8 @@
         visibility: hidden;
 
         width: 100%;
+        max-width: 240px;
+
         box-shadow: 0px 1px 15px rgba(0, 0, 0, 0.15);
         border-radius: 3px;
 
@@ -100,6 +102,8 @@
 
         &.active {
             opacity: 1;
+            left: 0;
+            transform: translateX(0);
             visibility: visible;
             pointer-events: all;
 
@@ -116,13 +120,14 @@
         .js-input-from,
         .js-input-to {
             @include font-setting($font-alt, 1rem, 1.5rem, 400, $color-black);
-            width: 45%;
+            width: 50%;
+            max-width: 88px;
             border: 1px solid #98A0AA;
             border-radius: 3px;
 
             text-align: center;
 
-            padding: 0.562rem 1.933rem;
+            padding: 0.562rem 1.25rem;
         }
     }
 
@@ -251,6 +256,8 @@
             overflow-y: hidden;
             background-color: $color-white;
             border: none;
+
+            left: -106px;
 
             padding: 1.5rem 1.5rem 0 1.5rem;
 
