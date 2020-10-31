@@ -1,8 +1,8 @@
 section.main__category.category
     h1.category__title Хлебные формы
     
-    .category__breadcrumbs
-        ul.breadcrumbs.cards__breadcrumbs
+    .category__breadcrumbs.breadcrumbs._category
+        ul.breadcrumbs-list._category
             +breadcrumb('catalog.html', 'Каталог', '')
             +breadcrumb('#', 'Хлебные формы', 'active')
     
@@ -16,7 +16,7 @@ section.main__category.category
                 +aside-link('Люльки', 'Тостовые', 'Прямоугольные', 'Овальные', 'Батонницы', 'Круглые', 'Формы из листового металла')
                 +aside-link('Столы', 'Тостовые', 'Прямоугольные', 'Овальные', 'Батонницы', 'Круглые', 'Формы из листового металла')
                 +aside-link('Стеллажи', 'Тостовые', 'Прямоугольные', 'Овальные', 'Батонницы', 'Круглые', 'Формы из листового металла')
-        .category__content
+        .category__content.good-selected
             .category__filter.filter
                 // Фильтр по цене
                 .filter__price
@@ -34,13 +34,12 @@ section.main__category.category
                 // Фильтр сортировки
                 .filter__sort
                     span.filter__sort-title Сортировка: 
-                    select.selectic-2
-                        option(value="hide") По алфавиту
-                        option(value="alfabet") По алфавиту
-                        option(value="popular") По популярности
-                        option(value="to-high") По возрастанию цены
-                        option(value="to-low") По уменьшению цены
-                        option(value="latest") По обновлению
+                    ul.filter__sort-list.selectric
+                        +sort-item('alfabet', 'По алфавиту')
+                        +sort-item('popular', 'По популярности')
+                        +sort-item('to-high', 'По возрастанию цены')
+                        +sort-item('to-low', 'По уменьшению цены')
+                        +sort-item('latest', 'По обновлению')
                         
                 // Данные по отфильтрованным позициям
                 .filter__stats

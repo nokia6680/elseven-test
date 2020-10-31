@@ -10,7 +10,7 @@
         @include font-setting($font-primary, 2rem, 3rem, 700, $color-black);
 
         text-align: center;
-        margin-bottom: 2rem;
+        margin-bottom: 2.188rem;
     }
 
     &__breadcrumbs {
@@ -19,7 +19,7 @@
         padding-left: 1.5rem;
         padding-right: 1.5rem;
 
-        margin-bottom: 1.5rem;
+        margin-bottom: 2.5rem;
     }
 
 
@@ -164,19 +164,20 @@
 
 @media only screen and (min-width: $laptop-xl) {
     .category {
-        &__breadcrumbs {
+        .breadcrumbs {
             padding-left: 0;
             padding-right: 0;
 
-            .breadcrumbs {
+            .breadcrumbs-list {
                 margin: 0 auto;
                 max-width: 1588px;
             }
         }
+
         &__wrapper {
             padding-left: 0;
             padding-right: 0;
-            
+
             max-width: 1588px;
             grid-template-columns: 238px 1fr;
         }

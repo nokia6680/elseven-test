@@ -38,7 +38,7 @@
         min-height: 82px;
         max-height: 82px;
 
-        margin-bottom: 1rem;
+        margin-bottom: 0.875rem;
     }
 
     &__sign {
@@ -72,7 +72,7 @@
 
     &__sku {
         @include font-setting($font-primary, 0.875rem, 1.25rem, 400, $color-grey);
-        margin-bottom: 0.5rem;
+        margin-bottom: 0.625rem;
 
         text-transform: uppercase;
     }
