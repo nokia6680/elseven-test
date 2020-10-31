@@ -42,6 +42,9 @@ mixin types-item(id, link, image, name)
 			img(src="static/images/content/" +image + '.jpg' alt="" +name).types-list__image
 			b.types-list__name=name
 
+mixin sort-item(data, type)
+	li(data-index="" +data).filter__sort-item=type
+
 mixin goods-item(id, link, image, sign, name, sku, price)
 	li(id=id).goods-list__item
 		span.goods-list__sign=sign

@@ -24,6 +24,9 @@
         padding: 0;
         border: none;
 
+        cursor: pointer;
+        outline: none;
+
         span {
             padding-left: 0.75rem;
             padding-right: 1.688rem;
@@ -155,6 +158,8 @@
                 box-shadow: none  !important;
 
                 top: -10px !important;
+
+                cursor: pointer;
             }
 
             &-to,
@@ -186,15 +191,108 @@
         }
     }
 
-    &__price-label {
-        @include font-setting($font-primary, 0.75rem, 0.933rem, 400, #323232);
-        letter-spacing: 0.135em;
-        text-transform: uppercase;
-        margin-right: 1.25rem;
-    }
-
     &__sort {
-        margin-bottom: 0.75rem;
+        margin-bottom: 1.25rem;
+        @include flex-setting(row, flex-start, center);
+
+        &-title {
+            padding-right: 0.75rem;
+
+            @include font-setting($font-alt, 1rem, 1.5rem, 400, $color-black);
+        }
+
+        .selectric-open {
+            .selectric {
+                .button::after {
+                    transform: rotate(270deg);
+                }
+            }
+        }
+
+        .selectric {
+            border: none;
+            background-color: transparent;
+
+            .label {
+                padding-right: 1.688rem;
+                height: auto;
+
+                margin: 0;
+
+                @include font-setting($font-alt, 1rem, 1.5rem, 500, $color-blue);
+            }
+
+            .button {
+                width: 8.4px;
+                height: 4.2px;
+                background-color: transparent;
+
+                &::after {
+                    position: absolute;
+                    content: '';
+
+                    width: 0;
+                    height: 0;
+                    border-style: solid;
+                    border-width: 4.2px 0 4.2px 4.2px;
+                    border-color: transparent transparent transparent $color-blue;
+
+                    top: 1.25rem;
+                    transform: rotate(90deg);
+                    right: 0.625rem;
+
+                    transition: 0.2s linear;
+                }
+            }
+        }
+
+        .selectric-items {
+            min-width: 230px;
+            overflow-y: hidden;
+            background-color: $color-white;
+            border: none;
+
+            padding: 1.5rem 1.5rem 0 1.5rem;
+
+            box-shadow: 0px 1px 15px rgba(0, 0, 0, 0.15);
+            border-radius: 3px;
+
+            .selectric-scroll {
+                background-color: transparent;
+                overflow-y: hidden;
+                -ms-overflow-style: none;
+                overflow: -moz-scrollbars-none;
+
+                &::-webkit-scrollbar {
+                    width: 0;
+                }
+            }
+
+            ul {
+                width: 230px;
+                background-color: $color-white;
+            }
+
+            li {
+                @include font-setting($font-alt, 1rem, 1.5rem, 400, $color-black);
+                margin-bottom: 0.75rem;
+                padding: 0;
+
+                &:last-of-type {
+                    margin-bottom: 0;
+                }
+            }
+
+            li.highlighted {
+                background-color: transparent;
+                color: $color-blue;
+            }
+
+            li:hover {
+                background-color: transparent;
+                color: $color-blue;
+            }
+        }
     }
 
     &__stats {

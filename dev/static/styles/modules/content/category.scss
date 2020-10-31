@@ -164,19 +164,20 @@
 
 @media only screen and (min-width: $laptop-xl) {
     .category {
-        &__breadcrumbs {
+        .breadcrumbs {
             padding-left: 0;
             padding-right: 0;
 
-            .breadcrumbs {
+            .breadcrumbs-list {
                 margin: 0 auto;
                 max-width: 1588px;
             }
         }
+        
         &__wrapper {
             padding-left: 0;
             padding-right: 0;
-            
+
             max-width: 1588px;
             grid-template-columns: 238px 1fr;
         }
