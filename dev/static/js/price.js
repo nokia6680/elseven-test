@@ -3,6 +3,8 @@ var $range = $(".js-range-slider"),
     $inputTo = $(".js-input-to"),
     $infoFrom = $(".from"),
     $infoTo = $(".to"),
+    $openedInfo = $(".data"),
+
     instance,
     min = 100,
     max = 350,
