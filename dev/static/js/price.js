@@ -1,9 +1,6 @@
 var $range = $(".js-range-slider"),
     $inputFrom = $(".js-input-from"),
     $inputTo = $(".js-input-to"),
-    $infoFrom = $(".from"),
-    $infoTo = $(".to"),
-    $openedInfo = $(".data"),
 
     instance,
     min = 100,
@@ -19,7 +16,8 @@ $range.ionRangeSlider({
     from: 100,
     to: 350,
     onStart: updateInputs,
-    onChange: updateInputs
+    onChange: updateInputs,
+    onFinish: updateFilter
 });
 instance = $range.data("ionRangeSlider");
 
@@ -29,9 +27,6 @@ function updateInputs(data) {
 
     $inputFrom.prop("value", from);
     $inputTo.prop("value", to);
-
-    $infoFrom.prop("value", from);
-    $infoTo.prop("value", to);
 }
 
 $inputFrom.on("input", function() {
@@ -63,3 +58,12 @@ $inputTo.on("input", function() {
         to: val
     });
 });
+
+function updateFilter(data) {
+    var filterData = $('.filter__price-text')
+
+    from = data.from;
+    to = data.to;
+
+    filterData.text(`${from} - ${to}`);
+}

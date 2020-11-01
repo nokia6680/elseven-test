@@ -16,15 +16,12 @@ section.main__category.category
                 +aside-link('Люльки', 'Тостовые', 'Прямоугольные', 'Овальные', 'Батонницы', 'Круглые', 'Формы из листового металла')
                 +aside-link('Столы', 'Тостовые', 'Прямоугольные', 'Овальные', 'Батонницы', 'Круглые', 'Формы из листового металла')
                 +aside-link('Стеллажи', 'Тостовые', 'Прямоугольные', 'Овальные', 'Батонницы', 'Круглые', 'Формы из листового металла')
-        .category__content.good-selected
+        .category__content
             .category__filter.filter
                 // Фильтр по цене
                 .filter__price
                     button(type="button").filter__price-open Цена: 
-                        span Все
-                    .filter__price-data
-                        input(type="text" value="0").from
-                        input(type="text" value="0").to
+                        span.filter__price-text Все
                     .filter__price-body
                         .filter__price-controls
                             input(type="text" value="0").js-input-from

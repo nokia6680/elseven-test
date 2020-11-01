@@ -35,7 +35,6 @@ for (var i = 0; i < upperItem.length; i++) {
     });
 };
 
-
 var priceOpener = document.querySelector('.filter__price-open');
 var priceOverlay = document.querySelector('.filter__price-body');
 
