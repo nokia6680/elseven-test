@@ -16,8 +16,8 @@
           'aside body';
   grid-template-columns: 103px 1fr;
   grid-column-gap: 11px;
-  width: min-content;
   margin: 0 auto;
+  max-width: 778px;
 
   &-main-title {
     grid-area: title;
@@ -60,9 +60,8 @@
   .body-head,
   .body-photo-block,
   .body-block {
-    width: 100%;
     display: grid;
-    grid-template-columns: repeat(4, 163px);
+    grid-template-columns: repeat(auto-fit, minmax(96px, 1fr));
     grid-auto-rows: minmax(36px, 1fr);
     grid-column-gap: 3px;
   }
