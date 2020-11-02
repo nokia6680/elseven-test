@@ -76,6 +76,7 @@
   .body-head,
   .body-photo-block,
   .body-block {
+    width: 100%;
     display: grid;
     grid-template-columns: repeat(8, 1fr);
     grid-auto-rows: minmax(36px, 1fr);
@@ -84,7 +85,9 @@
 
   .body-block {
     &:nth-of-type(odd) {
-      background-color: $color-palegray;
+        .body-content {
+            background-color: $color-palegray;
+        }
     }
   }
 
