@@ -72,10 +72,6 @@
       flex-flow: column;
       width: 127px;
       @include my-font-setting(14px, 20px, 700, $color-black, $font-alt);
-
-      & span {
-
-      }
     }
   }
 
