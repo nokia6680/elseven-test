@@ -1,4 +1,4 @@
-.card-table-1 {
+.card-table-5 {
   padding-top: 70px;
   padding-bottom: 127px;
 
@@ -9,14 +9,15 @@
   }
 }
 
-.card-table-1 .table {
+.card-table-5 .table {
   display: grid;
   grid-template-areas:
           'title title'
           'aside body';
-  grid-template-columns: 237px 1fr;
+  grid-template-columns: 237px 257px;
   grid-column-gap: 13px;
-  max-width: 1048px;
+  max-width: min-content;
+  margin: 0 auto;
 
   &-main-title {
     grid-area: title;
@@ -75,7 +76,7 @@
   .body-block {
     width: 100%;
     display: grid;
-    grid-template-columns: repeat(8, 1fr);
+    grid-template-columns: repeat(auto-fit, minmax(96px, 257px));
     grid-auto-rows: minmax(36px, 1fr);
     grid-column-gap: 3px;
   }

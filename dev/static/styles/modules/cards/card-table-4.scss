@@ -16,6 +16,8 @@
           'aside body';
   grid-template-columns: 103px 1fr;
   grid-column-gap: 13px;
+  max-width: 1048px;
+  margin: 0 auto;
 
   &-main-title {
     grid-area: title;

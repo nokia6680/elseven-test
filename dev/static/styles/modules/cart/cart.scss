@@ -1,0 +1,16 @@
+.cart {
+  max-width: 1588px;
+  margin: 0 auto;
+}
+
+@media (max-width: $laptop-lg) {
+  .cart {
+    max-width: 1552px;
+  }
+}
+
+@media (max-width: $laptop-md) {
+  .cart {
+    max-width: 1312px;
+  }
+}
