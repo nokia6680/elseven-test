@@ -149,6 +149,12 @@
     border-radius: 50%;
     z-index: 1;
   }
+
+  &:hover::after,
+  &:focus::after {
+    border-color: $color-blue;
+    background: rgba(47, 128, 237, 0.1);
+  }
 }
 
 .cards__filter-group input[type="radio"] {
@@ -159,6 +165,12 @@
 
   &:checked ~ .cards__label-radio::before {
     display: block;
+  }
+
+  &:disabled ~ .card-2__order-label-radio::after {
+    border-color: $color-grey;
+    background: $color-grey;
+    opacity: 0.15;
   }
 }
 
@@ -248,7 +260,29 @@
 
       &:hover,
       &:focus {
-        border-color: $color-black;
+        border-color: $color-blue;
+        box-shadow: inset 0px 0px 0px 1px $color-blue;
+        background: linear-gradient(0deg, rgba(47, 128, 237, 0.05), rgba(47, 128, 237, 0.05)), #FFFFFF;
+        outline: none;
+      }
+
+      &:disabled {
+        border: none;
+        box-shadow: none;
+        background: rgba(152, 160, 170, 0.15);
+
+        &:hover,
+        &:focus {
+          border: none;
+          background: rgba(152, 160, 170, 0.15);
+        }
+      }
+
+      &.invalid {
+        border-color: $color-red;
+        box-shadow: inset 0px 0px 0px 1px $color-red;
+        background: linear-gradient(0deg, rgba(235, 87, 87, 0.1), rgba(235, 87, 87, 0.1)), #FFFFFF;
+        outline: none;
       }
     }
 
@@ -263,7 +297,15 @@
 
       &:hover,
       &:focus {
-        color: $color-black;
+        color: $color-blue;
+      }
+
+      &:hover ~ input ,
+      &:focus ~ input {
+        border-color: $color-blue;
+        box-shadow: inset 0px 0px 0px 1px $color-blue;
+        background: linear-gradient(0deg, rgba(47, 128, 237, 0.05), rgba(47, 128, 237, 0.05)), #FFFFFF;
+        outline: none;
       }
 
       &:active {
@@ -289,7 +331,15 @@
 
       &:hover::before,
       &:focus::before {
-        background-color: $color-black;
+        background-color: $color-blue;
+      }
+
+      &:hover ~ input ,
+      &:focus ~ input {
+        border-color: $color-blue;
+        box-shadow: inset 0px 0px 0px 1px $color-blue;
+        background: linear-gradient(0deg, rgba(47, 128, 237, 0.05), rgba(47, 128, 237, 0.05)), #FFFFFF;
+        outline: none;
       }
 
       &:active::before {
@@ -325,30 +375,34 @@
     }
   }
 
-  & .selectric-items {
+  .selectric-items {
     color: $color-grey;
-    background-color: $color-palegray;
-    border: 1px solid $color-grey;
+    background: linear-gradient(0deg, rgba(47, 128, 237, 0.05), rgba(47, 128, 237, 0.05)), #FFFFFF;
+    border: 1px solid $color-blue;
 
     & li.highlighted {
       color: $color-black;
-      background: $color-grey;
+      background: $color-lightBlue;
     }
 
     & li:hover {
       color: $color-black;
-      background: $color-grey;
+      background: $color-lightBlue;
     }
   }
 
-  & .selectric-hover .selectric {
-    border-color: $color-black;
+  .selectric-hover .selectric {
+    border-color: $color-blue;
+    box-shadow: inset 0px 0px 0px 1px $color-blue;
+    background: linear-gradient(0deg, rgba(47, 128, 237, 0.05), rgba(47, 128, 237, 0.05)), #FFFFFF;
 
     & .button {
-      color: $color-grey;
+      color: $color-blue;
+      box-shadow: inset -1px 1px 0px 0px $color-blue, inset 0px -1px 0px 0px $color-blue;
+      background: linear-gradient(0deg, rgba(47, 128, 237, 0.05), rgba(47, 128, 237, 0.05)), #FFFFFF;
 
       &::after {
-        border-top-color: $color-grey;;
+        border-top-color: $color-blue;
       }
     }
   }
@@ -367,6 +421,22 @@
   border-radius: 3px;
   background: $color-blue;
   box-shadow: 0 3px 20px rgba(46, 51, 63, 0.35);
+
+  &:hover,
+  &:focus {
+    background: $blue-hover;
+    outline: none;
+  }
+
+  &:active {
+    opacity: 0.6;
+  }
+
+  &.disabled {
+    color: rgba(31, 37, 40, 0.5);
+    background: rgba(152, 160, 170, 0.15);
+    box-shadow: none;
+  }
 }
 
 @media (max-width: $laptop-sm) {

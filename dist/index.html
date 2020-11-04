@@ -1,94 +1,54 @@
-<!DOCTYPE html><html lang="ru-RU"><head><meta charset="utf-8"><title>Главная страница</title><!--[if IE]><meta http-equiv="X-UA-Compatible" content="IE = edge"><![endif]--><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="keywords" content=""><link rel="stylesheet" type="text/css" href="static/css/styles.css"></head><body><section class="cart card-2">    <h2>Оформление заказа</h2>
-    <div class="card-2__wrapper">
-        <form id="customer-form" class="card-2__customer-form" action="#" method="post">
-            <div class="card-2__inner-wrapper">
-                <div class="card-2__order card-2__order--customer">
-                    <h3>Покупатель</h3>
-                    <div class="card-2__order-wrapper">
-                        <div class="card-2__order-form-group">
-                            <label class="card-2__order-label" for="full-name">ФИО</label>
-                            <input class="card-2__order-input" id="full-name" name="full-name" type="text" placeholder="Ваше ФИО" required>
-                        </div>
-                        <div class="card-2__order-form-group">
-                            <label class="card-2__order-label" for="company-name">Название компании (необязательно)</label>
-                            <input class="card-2__order-input" id="company-name" name="company-name" type="text" placeholder="Название компании">
-                        </div>
-                        <div class="card-2__order-form-group">
-                            <label class="card-2__order-label" for="customer-email">Email</label>
-                            <input class="card-2__order-input" id="customer-email" name="customer-email" type="email" placeholder="ivan@mail.ru" required>
-                        </div>
-                        <div class="card-2__order-form-group">
-                            <label class="card-2__order-label" for="customer-tel">Телефон</label>
-                            <input class="card-2__order-input" id="customer-tel" name="customer-tel" type="tel" placeholder="+7 (900) 000-00-00" required>
-                        </div>
-                    </div>
-                </div>
-                <div class="card-2__order-total">
-                    <p class="card-2__order-total-header"><span>Ваш заказ</span><button>Изменить</button></p>
-                    <ul class="card-2__order-total-list">
-                        <li><span>Сумма заказа:</span><span>6 250 ₽</span></li>
-                        <li><span>Доставка:</span><span>Бесплатно</span></li>
-                        <li><span>Общий вес:</span><span>7,08 кг</span></li>
-                    </ul>
-                    <p class="card-2__order-total-footer"><span>Итого:</span><span>6 250 ₽</span></p>
-                </div>
-            </div>
-            <div class="card-2__order card-2__order--address">
-                <h3>Адрес доставки</h3>
-                <div class="card-2__order-wrapper">
-                    <div class="card-2__order-form-group card-2__order-form-group--region">
-                        <label class="card-2__order-label" for="address-region">Регион</label>
-                        <ul class="selectric">
-                            <li>Московская область</li>
-                            <li>Питерская область</li>
-                            <li>Полуостров Сахалин</li>
-                            <li>Больше областей я не знаю :)</li>
-                        </ul>
-                    </div>
-                    <div class="card-2__order-form-group card-2__order-form-group--city">
-                        <label class="card-2__order-label" for="review-name">Город</label>
-                        <input class="card-2__order-input" id="review-name" name="name" type="text" placeholder="Введите город" required>
-                    </div>
-                    <div class="card-2__order-form-group card-2__order-form-group--post-index">
-                        <label class="card-2__order-label" for="review-name">Почтовый индекс</label>
-                        <input class="card-2__order-input" id="review-name" name="name" type="email" placeholder="000000" required>
-                    </div>
-                    <div class="card-2__order-form-group card-2__order-form-group--address">
-                        <label class="card-2__order-label" for="review-name">Улица, дом, корпус/квартира/офис</label>
-                        <input class="card-2__order-input" id="review-name" name="name" type="tel" placeholder="Укажите улицу, дом, корпус/квартиру/офис" required>
-                    </div>
-                </div>
-            </div>
-            <div class="card-2__order card-2__order--delivery">
-                 <h3>Способ доставки</h3>
-                 <div class="card-2__order-wrapper">
-                     <div class="card-2__order-form-group">
-                         <input class="card-2__order-radio visually-hidden" type="radio" id="delivery-name-1" name="delivery" required>
-                         <label class="card-2__order-label-radio" for="delivery-name-1">ПЭК</label>
-                         <span class="card-2__delivery-price">Бесплатно</span>
-                     </div>
-                 </div>
-             </div>
-            <div class="card-2__order card-2__order--payment">
-                <h3>Способ оплаты</h3>
-                <div class="card-2__order-wrapper">
-                    <div class="card-2__order-form-group">
-                        <input class="card-2__order-radio visually-hidden" type="radio" id="payment-1" name="payment" required>
-                        <label class="card-2__order-label-radio" for="payment-1">Наличными при получении</label>
-                    </div>
-                    <div class="card-2__order-form-group">
-                        <input class="card-2__order-radio visually-hidden" type="radio" id="payment-2" name="payment" required>
-                        <label class="card-2__order-label-radio" for="payment-2">Оплата счета от юридического лица или ИП</label>
-                    </div>
-                </div>
-            </div>
-            <div class="card-2__order card-2__order--agreement">
-                <div class="card-2__order-wrapper">
-                    <input class="card-2__order-checkbox visually-hidden" type="checkbox" id="agreement" name="agreement" required>
-                    <label class="card-2__order-label-checkbox" for="agreement">Даю согласие <a href="#">на обработку персональных данных</a></label>
-                    <button class="card-2__button-submit" type="submit" alt="Оформить заказ">Оформить заказ</button>
-                </div>
-            </div>
-        </form>
-    </div>
-</section><script src="static/js/vendor/jquery-3.3.1.min.js"></script><script src="static/js/vendor/jquery.selectric.js"></script><script src="static/js/vendor/libs.js"></script><script src="static/js/main.js"></script></body></html>
+<!DOCTYPE html><html lang="ru-RU"><head><meta charset="utf-8"><title>Главная страница</title><!--[if IE]><meta http-equiv="X-UA-Compatible" content="IE = edge"><![endif]--><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="keywords" content=""><link rel="stylesheet" type="text/css" href="static/css/styles.css"></head><body><section class="cards card-1">
+<div class="breadcrumbs">
+<ul class="breadcrumbs-list cards-container"><li><a class="breadcrumb__link undefined" href="catalog.html" target="_self">Каталог</a></li><li><a class="breadcrumb__link undefined" href="#" target="_self">Хлебные формы</a></li><li><a class="breadcrumb__link undefined" href="#" target="_self">Тостовые</a></li><li><a class="breadcrumb__link undefined" href="#" target="_self">Тостерная №1</a></li></ul>
+</div>
+<div class="cards__content cards-container">
+<div class="cards__img-wrapper cards__img-wrapper--new">
+<img class="cards__img" src="static/images/content/card-1-example.jpg" width="373" height="240">
+</div>
+<div class="cards__filters">
+<h2>Тостерная №1</h2>
+<span class="cards__tags">SKU Л011</span>
+<span class="cards__availability">В наличии</span>
+<div class="cards__filter">
+<div class="cards__filter-input cards__filter-input--forms-in-section">
+<span class="cards__filter-tag">Сборка форм в секции</span>
+<ul class="selectric">
+<li data-index="10mm">1</li>
+<li data-index="20mm">3</li>
+<li data-index="30mm">3 с ручками</li>
+<li data-index="10mm">4</li>
+<li data-index="20mm">4 с ручками</li>
+<li data-index="30mm">5</li>
+<li data-index="10mm">5 с ручками</li>
+<li data-index="20mm">6 с ручками</li>
+</ul>
+<img src="static/images/content/card-1-tablet-1.jpg" width="91" height="56">
+</div>
+<div class="cards__filter-input cards__filter-input--form-type">
+<span class="cards__filter-tag">Тип формы </span>
+<ul class="selectric">
+<li data-index="4-sides">Тостерная №7 ( 280 х 80 х 75)</li>
+<li data-index="3-sides">Тостерная №8 (210 х 80 х 75)</li>
+<li data-index="2-sides">Тостерная №9 (198 х 113 х 93)</li>
+<li data-index="4-sides">Рулетница (307 х 107 х 53)</li>
+<li data-index="3-sides">Волнистая (320 х 125 х 60)</li>
+</ul>
+<img src="static/images/content/card-1-tablet-2.jpg" width="72" height="72">
+</div>
+<div class="cards__filter-input cards__filter-input--quantity">
+<span class="cards__filter-tag">Количество</span>
+<div class="cards__input-quantity">
+<span class="minus"></span>
+<span class="plus">+</span>
+<input type="number" id="quantity" name="quantity" min="1" value="1">
+</div>
+</div>
+<span class="cards__price">250 ₽</span>
+</div>
+<button class="cards__button-in-cart" href="#">Добавить в корзину</button>
+</div>
+</div>
+</section>
+<section class="card-table-1 cards-container">
+<h3>Выбрать сборку и тип формы в таблице</h3><div class="table"><div class="table-main-title"><div class="aside-empty-title"></div><div class="body-main-title">Количество форм в секции</div></div><div class="table-aside"><div class="table-title">Наименование формы Размер, мм</div><div class="title-block"><img src="static/images/content/table-1-title-example-1.jpg"><span>Тостерная №7<span>( 280 х 80 х 75)</span></span></div><div class="title-block"><img src="static/images/content/table-1-title-example-2.jpg"><span>Тостерная №8<span>( 280 х 80 х 75)</span></span></div><div class="title-block"><img src="static/images/content/table-1-title-example-3.jpg"><span>Тостерная №9<span>(198 х 113 х 93)</span></span></div><div class="title-block"><img src="static/images/content/table-1-title-example-4.jpg"><span>Рулетница<span>(307 х 107 х 53)</span></span></div><div class="title-block"><img src="static/images/content/table-1-title-example-5.jpg"><span>Волнистая<span>(320 х 125 х 60)</span></span></div></div><div class="table-body"><!-- row--><div class="body-head"><div class="body-title">1</div><div class="body-title">3</div><div class="body-title">3<span>с ручками</span></div><div class="body-title">4</div><div class="body-title">4<span>с ручками</span></div><div class="body-title">5</div><div class="body-title">5<span>с ручками</span></div><div class="body-title">6<span>с ручками</span></div></div><div class="body-photo-block"><div class="body-photo"><img src="static/images/content/table-1-example-1.jpg"></div><div class="body-photo"><img src="static/images/content/table-1-example-2.jpg"></div><div class="body-photo"><img src="static/images/content/table-1-example-3.jpg"></div><div class="body-photo"><img src="static/images/content/table-1-example-4.jpg"></div><div class="body-photo"><img src="static/images/content/table-1-example-5.jpg"></div><div class="body-photo"><img src="static/images/content/table-1-example-6.jpg"></div><div class="body-photo"><img src="static/images/content/table-1-example-7.jpg"></div><div class="body-photo"><img src="static/images/content/table-1-example-8.jpg"></div></div><div class="body-block"><div class="body-content">238 ₽</div><div class="body-content">811 ₽</div><div class="body-content">837 ₽</div><div class="body-content">1073 ₽</div><div class="body-content">1143 ₽</div><div class="body-content">1344 ₽</div><div class="body-content">1416 ₽</div><div class="body-content">1697 ₽</div></div><div class="body-block"><div class="body-content">213 ₽</div><div class="body-content">737 ₽</div><div class="body-content">763 ₽</div><div class="body-content">975 ₽</div><div class="body-content">1045 ₽</div><div class="body-content">1222 ₽</div><div class="body-content">1294 ₽</div><div class="body-content">1550 ₽</div></div><div class="body-block"><div class="body-content">238 ₽</div><div class="body-content">809 ₽</div><div class="body-content">846 ₽</div><div class="body-content">1076 ₽</div><div class="body-content">1157 ₽</div><div class="body-content">1344 ₽</div><div class="body-content">1444 ₽</div><div class="body-content">1734 ₽</div></div><div class="body-block"><div class="body-content">250 ₽</div><div class="body-content">848 ₽</div><div class="body-content">875 ₽</div><div class="body-content">1122 ₽</div><div class="body-content">1192 ₽</div><div class="body-content">-</div><div class="body-content">1477 ₽</div><div class="body-content">1769 ₽</div></div><div class="body-block"><div class="body-content">259 ₽</div><div class="body-content">883 ₽</div><div class="body-content">905 ₽</div><div class="body-content">1160 ₽</div><div class="body-content">1230 ₽</div><div class="body-content">-</div><div class="body-content">1524 ₽</div><div class="body-content">1827 ₽</div></div></div></div></section><script src="static/js/vendor/jquery-3.3.1.min.js"></script><script src="static/js/vendor/jquery.selectric.js"></script><script src="static/js/vendor/libs.js"></script><script src="static/js/main.js"></script></body></html>
