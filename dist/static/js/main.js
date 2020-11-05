@@ -61,17 +61,110 @@ $(function () {
     }
   });
 });
-$(function () {
-  $('.table div:not(.body-head, .body-title, .aside-empty-title, .body-main-title, .table-title, .table-main-title, .table-body, .body-photo, .body-photo-block)').on('mouseenter mouseleave', function (evt) {
-    if (evt.target.classList.contains('body-content') && !$(this).hasClass('body-block')) {
-      var bodyIndex = $(this).index() + 1;
-      $(this).parents('.body-block').toggleClass('hover');
-      $('.body-block').children(".body-content:nth-of-type(" + bodyIndex + ")").toggleClass("hover-col");
-    }
 
-    if (evt.currentTarget.classList.contains('body-block')) {
-      var titleIndex = $(this).index();
-      $('.table-aside').children(".title-block:nth-of-type(" + titleIndex + ")").toggleClass("hover");
-    }
-  });
-});
+window.onload = function () {
+  var table = document.querySelector('.table');
+
+  if (table) {
+    var bodyBlockElements = Array.from(document.querySelectorAll('.body-block'));
+    var headText = Array.from(document.querySelectorAll('.body-head'));
+    var tableAsideText = Array.from(document.querySelectorAll('.table-aside'));
+    var popupButtons = Array.from(document.querySelectorAll('.body-content button'));
+    var currentElement = null;
+    var parentElement = null;
+    var indexColElement = null;
+    var indexRowElement = null;
+    table.addEventListener("mouseover", function (evt) {
+      if (currentElement) {
+        return;
+      }
+
+      var target = evt.target.closest('.body-content');
+
+      if (!target) {
+        return;
+      }
+
+      currentElement = target;
+      parentElement = currentElement.parentNode;
+      parentElement.classList.add('hover');
+      var childCol = Array.from(parentElement.childNodes);
+      childCol.forEach(function (item, index) {
+        if (item === currentElement) {
+          indexColElement = index;
+        }
+      });
+      bodyBlockElements.forEach(function (item, index) {
+        if (item === parentElement) {
+          indexRowElement = index + 1;
+        }
+      });
+      bodyBlockElements.forEach(function (item) {
+        item.childNodes.forEach(function (item, index) {
+          if (index === indexColElement) {
+            item.classList.add('hover-col');
+          }
+        });
+      });
+    });
+    popupButtons.forEach(function (item) {
+      item.addEventListener("click", function (evt) {
+        evt.preventDefault();
+        var price = evt.target.closest('.body-content').innerText.split('\n')[0];
+        console.log(price);
+        headText.forEach(function (item) {
+          item.childNodes.forEach(function (item, index) {
+            if (index === indexColElement) {
+              var _headText = item.innerText.split('\n');
+
+              var headTitleText = _headText[0];
+              var headDescriptionText = _headText[1];
+              console.log(headTitleText, headDescriptionText);
+            }
+          });
+        });
+        tableAsideText.forEach(function (item) {
+          item.childNodes.forEach(function (item, index) {
+            if (index === indexRowElement) {
+              var asideText = item.innerText.split('\n');
+              var asideHeadText = asideText[0];
+              var asideDescriptionText = asideText[1];
+              console.log(asideHeadText, asideDescriptionText);
+            }
+          });
+        });
+      });
+    });
+    table.addEventListener("mouseout", function (evt) {
+      if (!currentElement) {
+        return;
+      }
+
+      var relatedTarget = evt.relatedTarget;
+
+      while (relatedTarget) {
+        if (relatedTarget === currentElement) {
+          return;
+        }
+
+        relatedTarget = relatedTarget.parentNode;
+      }
+
+      if (parentElement.classList.contains('hover')) {
+        parentElement.classList.remove('hover');
+      }
+
+      bodyBlockElements.forEach(function (item) {
+        item.childNodes.forEach(function (item, index) {
+          if (index === indexColElement) {
+            item.classList.remove('hover-col');
+          }
+        });
+      });
+      currentElement = null;
+      parentElement = null;
+      indexColElement = null;
+      indexRowElement = null;
+    });
+  }
+};
