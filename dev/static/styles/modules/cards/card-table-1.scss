@@ -68,6 +68,10 @@
       width: 127px;
       @include my-font-setting(14px, 20px, 700, $color-black, $font-alt);
     }
+
+    &.hover {
+      background: rgba(47, 128, 237, 0.15);
+    }
   }
 
   .body-head,
@@ -85,6 +89,14 @@
       .body-content {
         background-color: $color-palegray;
       }
+    }
+
+    &.hover {
+      background: rgba(47, 128, 237, 0.15);
+    }
+
+    &.hover .body-content {
+      background: rgba(47, 128, 237, 0.15);
     }
   }
 
@@ -120,5 +132,45 @@
     min-height: 84px;
     padding-top: 3px;
     @include my-font-setting(16px, 24px, 400, $color-black, $font-alt);
+
+    & button {
+      display: none;
+      width: 83px;
+      height: 36px;
+      @include my-font-setting(14px, 20px, 700, $color-white, $font-alt);
+      border: none;
+      border-radius: 3px;
+      background: $color-blue;
+      box-shadow: 0 3px 20px rgba(46, 51, 63, 0.35);
+      cursor: pointer;
+
+      &:active {
+        opacity: 0.6;
+      }
+
+      &.disabled {
+        color: rgba(31, 37, 40, 0.5);
+        background: rgba(152, 160, 170, 0.15);
+        box-shadow: none;
+      }
+    }
+
+    &:hover,
+    &:focus {
+      @include my-font-setting(20px, 24px, 700, $color-black, $font-alt);
+      background: rgba(47, 128, 237, 0.3);
+      cursor: pointer;
+      outline: none;
+    }
+
+    &:hover button,
+    &:focus button {
+      display: block;
+
+    }
+  }
+
+  .body-block .body-content.hover-col {
+    background: rgba(47, 128, 237, 0.15);
   }
 }
