@@ -1,0 +1,20 @@
+section.cart.cart-3
+    h2.cart__title Спасибо за Ваш заказ!
+    p.cart__description Подтверждение заказа и вся информация направлены на 
+        a(href="mailto:ivan_ivanov@mail.ru" target="_blank").cart__mail ivan_ivanov@mail.ru
+
+    .cart__order.order 
+        .order__head
+            .order__details
+                h3.order__nr Заказ № 15
+                time(datetime="2020-08-15 19:00").order__date 15.08.2020 19:00
+            button(type="button").order__print Распечатать заказ
+        ul.order__list
+            +cart-order('category-1', 'Форма тостерная №9', '(198 x 113 x 93), 3 формы с ручками в секции', 'x1')
+            +cart-order('category-1', 'Форма тостерная №9', '(198 x 113 x 93), 3 формы с ручками в секции', 'x24')
+        .order__final
+            p.order__final-price На сумму: 6 250 ₽
+            span.order__final-weight Общий вес: 7,08 кг
+    
+    .cart__address.address
+        +address('Оплата: ожидание оплаты', 'Наличными', 'Адрес доставки', 'Московская область, г. Москва, Ленина, 12, кв. 34', 'Способ доставки', 'ПЭК')

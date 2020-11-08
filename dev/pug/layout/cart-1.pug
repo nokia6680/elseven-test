@@ -1,0 +1,25 @@
+include ../helpers/mixins
+block variables
+
+doctype html
+html(lang="ru-RU")
+	head
+		meta(charset="utf-8")
+		title #{title}
+		<!--[if IE]>
+		meta(http-equiv='X-UA-Compatible', content="IE = edge")
+		<![endif]-->
+		meta(name="viewport" content="width=device-width,initial-scale=1")
+		meta(name="keywords" content="")
+		link(rel="stylesheet" type='text/css' href="static/css/styles.css")
+	body
+		//include ../modules/header/header
+		include ../modules/cart/cart-1
+		//include ../modules/footer/footer
+		script(src="static/js/vendor/jquery-3.3.1.min.js")
+		script(src="static/js/vendor/jquery.selectric.js")
+		script(src="static/js/vendor/libs.js")
+		script(src="static/js/main.js")
+		script(src="static/js/quantity.js")
+		
+		block script
