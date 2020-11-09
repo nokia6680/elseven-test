@@ -60,20 +60,6 @@ input,
 select,
 button { outline: none; }
 
-.wrapper {
-  display: flex;
-  flex-direction: column;
-  height: 100%;
-}
-
-.content { flex: 1 0 auto; }
-
-.container {
-  margin: 0 auto;
-  //max-width: $content;
-  width: 100%;
-}
-
 .visually-hidden {
   position: absolute;
   clip: rect(1px 1px 1px 1px);

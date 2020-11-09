@@ -10,46 +10,36 @@ mixin breadcrumb(link, name, type)
 	li
 		a(class="breadcrumb__link " +type href="" +link target="_self")=name
 
-mixin cat-type(id, link, image, name)
+mixin cat-type(id, link, frame, image, name)
 	li(id=id).catalog__item
 		a(href="" +link target="_self").catalog__link
-			img(src="static/images/content/" +image + '.jpg' alt="" +name).catalog__image
+			picture(class="catalog__frame " +frame)
+				img(src="static/images/content/" +image + '.jpg' alt="" +name).catalog__image
 			b.catalog__name=name
 
-mixin features-item(icon, title, text)
-	li.features__item
-		span(class="features__icon " +icon)
-		h3.features__name=title
-		p.features__description=text
-
-mixin ship-item(image, title, date)
-	li.shipment__item
-		a(href="#" target="_self").shipment__link
-			img(src="static/images/content/" +image + '.jpg' alt="" +title).shipment__image
-			b.shipment__title=title
-			time(datetime="14-07-2020").shipment__date=date
-
-mixin aside-link(title, ...items)
-	li.aside__item
+mixin aside-link(title, type, ...items)
+	li(class="aside__item " +type)
 		h3.aside__name=title
 		.aside__controls
 			each link in items
 				a(href="#" target="_self").aside__link=link
 
-mixin types-item(id, link, image, name)
+mixin types-item(id, link, frame, image, name)
 	li(id=id).types-list__item
 		a(href="" +link target="_self").types-list__link
-			img(src="static/images/content/" +image + '.jpg' alt="" +name).types-list__image
+			picture(class="types-list__frame " +frame)
+				img(src="static/images/content/" +image + '.jpg' alt="" +name).types-list__image
 			b.types-list__name=name
 
 mixin sort-item(data, type)
 	li(data-index="" +data).filter__sort-item=type
 
-mixin goods-item(id, link, image, sign, name, sku, price)
+mixin goods-item(id, link, frame, image, sign, name, sku, price)
 	li(id=id).goods-list__item
 		span.goods-list__sign=sign
 		a(href="" +link target="_self").goods-list__link
-			img(src="static/images/content/" +image + '.jpg' alt="" +name).goods-list__image
+			picture(class="goods-list__item " +frame)
+				img(src="static/images/content/" +image + '.jpg' alt="" +name).goods-list__image
 			h3.goods-list__name=name
 			span.goods-list__sku=sku
 			b.goods-list__price=price
