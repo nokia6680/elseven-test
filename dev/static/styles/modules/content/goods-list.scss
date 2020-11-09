@@ -34,11 +34,28 @@
         }
     }
 
+    &__frame {
+        width: 100%;
+        height: 100%;
+        max-height: 82px;
+        margin-bottom: 0.875rem;
+
+        &.noimage {
+            background-color: #E7E7E7;
+            background-image: url("data:image/svg+xml,%3Csvg width='57' height='57' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M50.473.351H6.906C3.482.351.682 3.151.682 6.575v43.567c0 3.423 2.8 6.224 6.224 6.224h43.567c3.423 0 6.224-2.8 6.224-6.224V6.575c0-3.423-2.8-6.224-6.224-6.224zm0 6.224v43.567H6.906V6.575h43.567zm-24.46 33.391l9.336-12.043L47.36 43.918H10.018l9.335-12.012 6.66 8.06z' fill='%23000' fill-opacity='.54'/%3E%3C/svg%3E");
+            background-position: 50% 50%;
+            background-repeat: no-repeat;
+            background-size: 20%;
+
+            .goods-list__image {
+                display: none;
+            }
+        }
+    }
+
     &__image {
         min-height: 82px;
         max-height: 82px;
-
-        margin-bottom: 0.875rem;
     }
 
     &__sign {
@@ -62,6 +79,7 @@
 
         top: 0.25rem;
         right: 0.25rem;
+        z-index: 2;
     }
 
     &__name {
@@ -89,11 +107,14 @@
         grid-auto-rows: minmax(236px, 1fr);
         grid-row-gap: 4rem;
 
+        &__frame {
+            max-height: 124px;
+            margin-bottom: 1.875rem;
+        }
+
         &__image {
             min-height: 124px;
             max-height: 124px;
-
-            margin-bottom: 1.875rem;
         }
     }
 }
@@ -103,11 +124,13 @@
         grid-template-columns: repeat(4, minmax(192px, 1fr));
         grid-auto-rows: minmax(240px, 1fr);
 
+        &__frame {
+            margin-bottom: 1rem;
+        }
+
         &__image {
             min-height: 124px;
             max-height: 124px;
-
-            margin-bottom: 1rem;
         }
 
         &__name {
@@ -132,6 +155,10 @@
         grid-template-columns: repeat(4, minmax(248px, 1fr));
         grid-auto-rows: minmax(276px, 1fr);
 
+        &__frame {
+            max-height: 160px;
+        }
+
         &__image {
             min-height: 160px;
             max-height: 160px;
@@ -143,6 +170,10 @@
     .goods-list {
         grid-template-columns: repeat(4, minmax(298px, 1fr));
         grid-auto-rows: minmax(308px, 1fr);
+
+        &__frame {
+            max-height: 192px;
+        }
 
         &__image {
             min-height: 192px;
@@ -157,6 +188,10 @@
         grid-auto-rows: minmax(312px, 1fr);
 
         margin-bottom: 6rem;
+
+        &__frame {
+            max-height: 196px;
+        }
 
         &__image {
             min-height: 196px;

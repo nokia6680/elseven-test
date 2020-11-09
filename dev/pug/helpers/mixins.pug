@@ -38,7 +38,7 @@ mixin goods-item(id, link, frame, image, sign, name, sku, price)
 	li(id=id).goods-list__item
 		span.goods-list__sign=sign
 		a(href="" +link target="_self").goods-list__link
-			picture(class="goods-list__item " +frame)
+			picture(class="goods-list__frame " +frame)
 				img(src="static/images/content/" +image + '.jpg' alt="" +name).goods-list__image
 			h3.goods-list__name=name
 			span.goods-list__sku=sku
