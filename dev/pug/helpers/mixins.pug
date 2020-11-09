@@ -77,13 +77,15 @@ mixin cart-item(image, name, info, quantity, price)
 			button(type="button").cart-1__item-remove
 
 
-mixin cart-order(image, name, info, quantity)
+mixin cart-order(image, name, size, info, quantity)
 	li.order__item
 		.order__item-details
 			img(src="static/images/content/" +image + '.jpg' alt="" +name).order__item-img
 			.order__item-info
 				h3.order__item-name=name
-				span.order__item-specs=info
+				.order__item-description
+					span.order__item-sizes=size
+					span.order__item-specs=info
 			span.order__item-quantity=quantity
 			
 

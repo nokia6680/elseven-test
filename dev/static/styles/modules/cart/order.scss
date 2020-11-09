@@ -1,0 +1,204 @@
+.order {
+    width: 100%;
+    background-color: rgba(234,239,247, 0.5);
+
+    padding: 2.813rem 1.5rem 2.25rem 1.5rem;
+
+    @include flex-setting(column, flex-start, center);
+
+    &__head {
+        width: 100%;
+        @include flex-setting(row, space-between, flex-start);
+
+        margin-bottom: 1rem;
+    }
+
+    &__details {
+        width: 45%;
+        @include flex-setting(column, flex-start, flex-start);
+    }
+
+    &__nr {
+        @include font-setting($font-primary, 1.25rem, 1.875rem, 700, $color-black);
+        margin-bottom: 0.433rem;
+    }
+
+    &__date {
+        @include font-setting($font-alt, 1rem, 1.5rem, 400, $color-grey);
+    }
+
+    &__print {
+        width: 55%;
+        background-color: transparent;
+        border: none;
+
+        @include font-setting($font-alt, 1rem, 1.5rem, 500, $color-blue);
+
+        padding: 0;
+        margin-top: 0.325rem;
+
+        cursor: pointer;
+
+        &:hover,
+        &:active {
+            opacity: 0.8;
+            transition: 0.2s linear;
+        }
+    }
+
+    &__list {
+        width: 100%;
+
+        margin-bottom: 0.75rem;
+    }
+
+    &__item {
+        width: 100%;
+
+        @include flex-setting(column, flex-start, flex-start);
+
+        border-bottom: 3px solid $color-palegray;
+
+        padding-bottom: 1.5rem;
+        padding-top: 1.5rem;
+
+        &:last-of-type {
+            border-bottom: 0;
+        }
+
+        &-details {
+            width: 100%;
+
+            @include flex-setting(row, space-between, flex-start);
+            flex-wrap: wrap;
+        }
+
+        &-img {
+            max-width: 100px;
+            min-width: 100px;
+        }
+
+        &-info {
+            width: auto;
+            max-width: 54.4%;
+            @include flex-setting(column, flex-start, flex-start);
+        }
+
+        &-name {
+            @include font-setting($font-alt, 0.875rem, 1.25rem, 700, $color-black);
+
+            margin-bottom: 0.25rem;
+        }
+
+        &-description {
+            width: 100%;
+            @include flex-setting(column, flex-start, flex-start);
+        }
+
+        &-specs,
+        &-sizes {
+            @include font-setting($font-alt, 0.875rem, 1.25rem, 400, $color-black);
+            text-align: left;
+
+            margin-bottom: 0.75rem;
+        }
+
+        &-sizes {
+            margin-bottom: 0;
+        }
+
+        &-quantity {
+            width: 100%;
+            text-align: center;
+            @include font-setting($font-alt, 0.875rem, 1.25rem, 400, $color-black);
+        }
+    }
+
+    &__final {
+        width: 100%;
+        @include flex-setting(column, flex-start, center);
+
+        &-price {
+            @include font-setting($font-alt, 1rem, 1.5rem, 400, $color-black);
+            margin-bottom: 0.313rem;
+        }
+
+        &-weight {
+            @include font-setting($font-alt, 0.875rem, 1.25rem, 400, $color-grey);
+        }
+    }
+}
+
+@media only screen and (min-width: $tablet) {
+    .order {
+        width: 100%;
+        max-width: 640px;
+
+        padding: 2.813rem 6.125rem 2.25rem 5.125rem;
+
+        &__head {
+            margin-bottom: 1rem;
+        }
+
+        &__print {
+            text-align: right;
+            width: auto;
+        }
+
+        &__list {
+            width: 100%;
+
+            margin-bottom: 0.75rem;
+        }
+
+        &__item {
+            &-details {
+                justify-content: flex-start;
+                flex-wrap: nowrap;
+                position: relative;
+            }
+
+            &-img {
+                margin-right: 1.5rem;
+            }
+
+            &-specs {
+                margin-bottom: 0;
+            }
+
+            &-quantity {
+                position: absolute;
+                top: 0;
+                right: 0;
+                width: auto;
+            }
+        }
+
+        &__final {
+            align-items: flex-end;
+        }
+    }
+}
+
+@media only screen and (min-width: $laptop-lg) {
+    .order {
+        max-width: 760px;
+
+        padding: 2.25rem 8.25rem;
+
+
+        &__nr {
+            font-size: 1.75rem;
+            line-height: 2.625rem;
+            margin-bottom: 0.25rem;
+        }
+    }
+}
+
+@media only screen and (min-width: $laptop-xl) {
+    .order {
+        max-width: 778px;
+
+        padding: 2.25rem 8.4375rem;
+    }
+}
