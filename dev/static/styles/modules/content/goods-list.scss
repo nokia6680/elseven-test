@@ -40,6 +40,8 @@
         max-height: 82px;
         margin-bottom: 0.875rem;
 
+        @include flex-setting(column, center, center);
+
         &.noimage {
             background-color: #E7E7E7;
             background-image: url("data:image/svg+xml,%3Csvg width='57' height='57' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M50.473.351H6.906C3.482.351.682 3.151.682 6.575v43.567c0 3.423 2.8 6.224 6.224 6.224h43.567c3.423 0 6.224-2.8 6.224-6.224V6.575c0-3.423-2.8-6.224-6.224-6.224zm0 6.224v43.567H6.906V6.575h43.567zm-24.46 33.391l9.336-12.043L47.36 43.918H10.018l9.335-12.012 6.66 8.06z' fill='%23000' fill-opacity='.54'/%3E%3C/svg%3E");
