@@ -111,6 +111,10 @@
             width: 100%;
             text-align: center;
             @include font-setting($font-alt, 0.875rem, 1.25rem, 400, $color-black);
+
+            &:first-letter {
+                color: $color-grey;
+            }
         }
     }
 
