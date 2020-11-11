@@ -12,7 +12,7 @@
           <img class="cards__img" src="static/images/content/card-5-example.jpg" width="373" height="240">
         </div>
         <div class="cards__filters">
-            <h2>Пресс-форма для ветчин и мяса</h2>
+            <h1>Пресс-форма для ветчин и мяса</h1>
             <span class="cards__tags">SKU Л011</span>
             <span class="cards__availability">В наличии</span>
                 <div class="cards__filter">
@@ -39,11 +39,13 @@
         </div>
     </div>
 </section>
-<section class="card-table-5 cards-container">
-    <h3>Выбрать тип формы в таблице</h3>
-    .table
+<section class="card-tables card-table-5 cards-container">
+    <h2>Выбрать тип формы в таблице</h2>
+    .table.table-mini
         .table-main-title
-            .aside-empty-title Наименование формы Размер, мм
+            .aside-empty-title
+                span.title-main Наименование формы
+                span.title-dimensions Размер, мм
             .body-main-title Цена
         .table-aside
             .title-block
@@ -62,11 +64,38 @@
             // row
             .body-block
                 .body-content 1693 ₽
-                .body-content 1693 ₽
+                    <button type="button" alt="Выбрать товар">Выбрать</button>
             .body-block
                 .body-content 2045 ₽
-                .body-content 1693 ₽
+                    <button type="button" alt="Выбрать товар">Выбрать</button>
             .body-block
                 .body-content 1964 ₽
-                .body-content 1693 ₽
+                    <button type="button" alt="Выбрать товар">Выбрать</button>
+
 </section>
+<section class="cards-modal">
+<h4>Форма тостерная №9</h4>
+<span class="cards-modal__dimensions"></span>
+<span class="cards-modal__description"><span class="first"></span><span class="second"></span></span>
+<span class="cards-modal__price"></span>
+<form class="cards-modal__form" action="#" method="get">
+<div class="cards__filter-input cards__filter-input--quantity">
+<span class="cards__filter-tag">Количество</span>
+<div class="cards__input-quantity">
+<span class="minus"></span>
+<span class="plus">+</span>
+<input type="number" id="quantity" name="quantity" min="1" value="1">
+</div>
+</div>
+<input class="visually-hidden" name="title">
+<input class="visually-hidden" name="dimensions">
+<input class="visually-hidden" name="description">
+<input class="visually-hidden" name="price">
+<button type="submit" alt="Добавить в корзину">Добавить в корзину</button>
+</form>
+<button class="modal-form__close-button" type="button"><span class="visually-hidden">Закрыть окно</span></button>
+</section>
+<div class="overlay"></div>
+<div class="cards-modal-success">
+<p>Товар успешно добавлен в корзину</p>
+</div>

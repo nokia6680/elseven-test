@@ -11,7 +11,8 @@
         "cards/card-3",
         "cards/card-4",
         "cards/card-5";
-@import "cards/card-table-1",
+@import "cards/tables",
+        "cards/card-table-1",
         "cards/card-table-2",
         "cards/card-table-4",
         "cards/card-table-5";
@@ -21,6 +22,7 @@
         "cart/cart-3",
         "cart/order",
         "cart/address";
+@import "cards/cards-modals";
 
 @import "content/catalog";
 @import "content/category";

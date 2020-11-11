@@ -6,7 +6,8 @@
 <div class="cards__img-wrapper cards__img-wrapper--new">
 <img class="cards__img cards__img--new" src="static/images/content/card-2-example.jpg" width="373" height="240" >
 </div>
-<div class="cards__filters"><!--<h2>Противень 600х400х20 багет</h2>--><h2>Тостерная №1</h2>
+<div class="cards__filters">
+<h1>Тостерная №1</h1>
 <span class="cards__tags">SKU Л011</span>
 <span class="cards__availability cards__availability--miss">Нет в наличии</span>
 <div class="cards__filter">
@@ -67,5 +68,31 @@
 </div>
 </div>
 </section>
-<section class="card-table-2 cards-container">
-<h3>Выбрать высоту и количество бортов в таблице</h3><div class="table"><div class="table-main-title"><div class="aside-empty-title"></div><div class="body-main-title">Высота бортов</div></div><div class="table-aside"><div class="table-title">Кол-во бортов</div><div class="title-block"><span>4 борта</span></div><div class="title-block"><span>3 борта</span></div><div class="title-block"><span>2 борта</span></div></div><div class="table-body"><!-- row--><div class="body-head"><div class="body-title">10 мм</div><div class="body-title">20 мм</div><div class="body-title">30 мм</div><div class="body-title">50 мм</div></div><div class="body-block"><div class="body-content">2081 ₽</div><div class="body-content">2189 ₽</div><div class="body-content">2298 ₽</div><div class="body-content">2516 ₽</div></div><div class="body-block"><div class="body-content">2050 ₽</div><div class="body-content">2127 ₽</div><div class="body-content">2205 ₽</div><div class="body-content">2360 ₽</div></div><div class="body-block"><div class="body-content">2019 ₽</div><div class="body-content">2065 ₽</div><div class="body-content">2112 ₽</div><div class="body-content">2205 ₽</div></div></div></div></section><!--include ../modules/footer/footer--><script src="static/js/vendor/jquery-3.3.1.min.js"></script><script src="static/js/vendor/jquery.selectric.js"></script><script src="static/js/vendor/libs.js"></script><script src="static/js/main.js"></script></body></html>
+<section class="card-tables card-table-2 cards-container">
+<h2>Выбрать высоту и количество бортов в таблице</h2><div class="table"><div class="table-main-title"><div class="aside-empty-title"></div><div class="body-main-title">Высота бортов</div></div><div class="table-aside"><div class="table-title"><span class="title-main">Кол-во бортов</span></div><div class="title-block"><span>4 борта</span></div><div class="title-block"><span>3 борта</span></div><div class="title-block"><span>2 борта</span></div></div><div class="table-body"><!-- row--><div class="body-head"><div class="body-title">10 мм</div><div class="body-title">20 мм</div><div class="body-title">30 мм</div><div class="body-title">50 мм</div></div><div class="body-block"><div class="body-content">2081 ₽<button type="button" alt="Выбрать товар">Выбрать</button></div><div class="body-content">2189 ₽<button type="button" alt="Выбрать товар">Выбрать</button></div><div class="body-content">2298 ₽<button type="button" alt="Выбрать товар">Выбрать</button></div><div class="body-content">2516 ₽<button type="button" alt="Выбрать товар">Выбрать</button></div></div><div class="body-block"><div class="body-content">2050 ₽<button type="button" alt="Выбрать товар">Выбрать</button></div><div class="body-content">2127 ₽<button type="button" alt="Выбрать товар">Выбрать</button></div><div class="body-content">2205 ₽<button type="button" alt="Выбрать товар">Выбрать</button></div><div class="body-content">2360 ₽<button type="button" alt="Выбрать товар">Выбрать</button></div></div><div class="body-block"><div class="body-content">2019 ₽<button type="button" alt="Выбрать товар">Выбрать</button></div><div class="body-content">2065 ₽<button type="button" alt="Выбрать товар">Выбрать</button></div><div class="body-content">2112 ₽<button type="button" alt="Выбрать товар">Выбрать</button></div><div class="body-content">2205 ₽<button type="button" alt="Выбрать товар">Выбрать</button></div></div></div></div></section>
+<section class="cards-modal">
+<h4>Форма тостерная №9</h4>
+<span class="cards-modal__dimensions"></span>
+<span class="cards-modal__description"><span class="first"></span><span class="second"></span></span>
+<span class="cards-modal__price"></span>
+<form class="cards-modal__form" action="#" method="get">
+<div class="cards__filter-input cards__filter-input--quantity">
+<span class="cards__filter-tag">Количество</span>
+<div class="cards__input-quantity">
+<span class="minus"></span>
+<span class="plus">+</span>
+<input type="number" id="quantity" name="quantity" min="1" value="1">
+</div>
+</div>
+<input class="visually-hidden" name="title">
+<input class="visually-hidden" name="dimensions">
+<input class="visually-hidden" name="description">
+<input class="visually-hidden" name="price">
+<button type="submit" alt="Добавить в корзину">Добавить в корзину</button>
+</form>
+<button class="modal-form__close-button" type="button"><span class="visually-hidden">Закрыть окно</span></button>
+</section>
+<div class="overlay"></div>
+<div class="cards-modal-success">
+<p>Товар успешно добавлен в корзину</p>
+</div><!--include ../modules/footer/footer--><script src="static/js/vendor/jquery-3.3.1.min.js"></script><script src="static/js/vendor/jquery.selectric.js"></script><script src="static/js/vendor/libs.js"></script><script src="static/js/main.js"></script></body></html>

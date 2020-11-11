@@ -61,17 +61,124 @@ $(function() {
     });
 });
 
+// Спрягаем слова
+// function wordСonjugation(n, text_forms) {
+//     n = Math.abs(n) % 100; var n1 = n % 10;
+//     if (n > 10 && n < 20) { return text_forms[2]; }
+//     if (n1 > 1 && n1 < 5) { return text_forms[1]; }
+//     if (n1 == 1) { return text_forms[0]; }
+//     return text_forms[2];
+// }
+
+// Модальная требуха
+
+function modalOpen(data) {
+    const ESC_BUTTON = 27;
+
+    let modal = document.querySelector('.cards-modal');
+
+    if (modal) {
+
+        let modalCloseButton = modal.querySelector('.modal-form__close-button');
+        let modalTitle = modal.querySelector('.cards-modal h4');
+        let modalTitleInput = modal.querySelector('input[name=title]');
+        let modalDimensions = modal.querySelector('.cards-modal__dimensions');
+        let modalDimensionsInput = modal.querySelector('input[name=dimensions]');
+        let modalDescriptionFirst = modal.querySelector('.cards-modal__description .first');
+        let modalDescriptionSecond = modal.querySelector('.cards-modal__description .second');
+        let modalDescriptionInput = modal.querySelector('input[name=description]');
+        let modalPrice = modal.querySelector('.cards-modal__price');
+        let modalPriceInput = modal.querySelector('input[name=price]');
+        let overlay = document.querySelector('.overlay');
+
+        function onDocumentKeyDown(evt) {
+            if (evt.keyCode === ESC_BUTTON && modal.classList.contains("cards-modal--show")) {
+                evt.preventDefault();
+                modalClose(evt);
+            }
+        }
+
+        function onModalCloseButton(evt) {
+            modalClose(evt);
+        }
+
+        function onOverlayClick(evt) {
+            if (evt.target.classList.contains('overlay')) {
+                modalClose(evt);
+            }
+        }
+
+        function modalClose(evt) {
+            evt.preventDefault();
+            modal.classList.remove("cards-modal--show");
+            overlay.classList.remove("overlay--show");
+            modalCloseButton.removeEventListener("click", onModalCloseButton);
+            window.removeEventListener("keydown", onDocumentKeyDown);
+        }
+
+        function modalOpen(data) {
+            (data.asideTitle) ? modalTitle.innerHTML = `<span>${data.asideTitle}: </span>${data.productTitle}` : modalTitle.textContent = `${data.productTitle}`;;
+            modalTitleInput.value = data.productTitle;
+            if (data.asideDimensions && data.productDimensions) {
+                modalDimensions.textContent = `${data.asideDimensions}: ${data.productDimensions}` ;
+                modalDimensionsInput.value = data.productDimensions;
+            } else {
+                modalDimensions.classList.add('visually-hidden');
+            }
+
+            if (!data.tableMini) {
+                modalDescriptionFirst.textContent = `${data.bodyTitle ? data.bodyTitle : ''}: ${data.description[0]} `;
+                modalDescriptionSecond.textContent = data.description[1];
+                modalDescriptionInput.value = data.description.join(' ');
+            }
+
+            modalPrice.textContent = data.price;
+            modalPriceInput.value = data.price;
+            modal.classList.add("cards-modal--show");
+            overlay.classList.add("overlay--show");
+            modalCloseButton.addEventListener("click", onModalCloseButton);
+            overlay.addEventListener("click", onOverlayClick);
+            window.addEventListener("keydown", onDocumentKeyDown);
+        }
+
+        modalOpen(data);
+    }
+}
+
 window.onload = function() {
     let table = document.querySelector('.table');
+
     if (table) {
+
         let bodyBlockElements = Array.from(document.querySelectorAll('.body-block'));
         let headText = Array.from(document.querySelectorAll('.body-head'));
         let tableAsideText = Array.from(document.querySelectorAll('.table-aside'));
         let popupButtons = Array.from(document.querySelectorAll('.body-content button'));
+        let asideDimensions =  table.querySelector('.title-dimensions');
+
+        let data = {
+            tableMini: false
+        };
+
+        let indexModifier = 1;
         let currentElement = null;
         let parentElement = null;
         let indexColElement = null;
         let indexRowElement = null;
+
+        if (table.classList.contains('table-mini')) {
+            data.tableMini = true;
+            indexModifier = 0;
+            data.asideTitle = table.querySelector('.aside-empty-title .title-main').textContent;
+        } else {
+            data.asideTitle = table.querySelector('.title-main').textContent;
+        }
+
+        if (asideDimensions) {
+            data.asideDimensions = asideDimensions.textContent;
+        }
+
+        data.bodyTitle = table.querySelector('.body-main-title').textContent;
 
         table.addEventListener("mouseover", function (evt) {
             if (currentElement) {
@@ -99,7 +206,7 @@ window.onload = function() {
 
             bodyBlockElements.forEach((item, index) => {
                 if (item === parentElement) {
-                    indexRowElement = index + 1;
+                    indexRowElement = index + indexModifier;
                 }
             });
 
@@ -110,20 +217,24 @@ window.onload = function() {
                     }
                 });
             });
+
+            tableAsideText.forEach((item) => {
+                item.childNodes.forEach((item, index) => {
+                    if (index === indexRowElement) {
+                        item.classList.add('hover');
+                    }
+                });
+            });
         });
 
         popupButtons.forEach((item) => {
             item.addEventListener("click", function (evt) {
                 evt.preventDefault();
-                let price = evt.target.closest('.body-content').innerText.split('\n')[0];
-                console.log(price);
+                data.price = evt.target.closest('.body-content').innerText.split('\n')[0];
                 headText.forEach((item) => {
                     item.childNodes.forEach((item, index) => {
                         if (index === indexColElement) {
-                            let headText = item.innerText.split('\n');
-                            let headTitleText = headText[0];
-                            let headDescriptionText = headText[1];
-                            console.log(headTitleText, headDescriptionText);
+                            data.description = item.innerText.split('\n');
                         }
                     });
                 });
@@ -131,12 +242,12 @@ window.onload = function() {
                     item.childNodes.forEach((item, index) => {
                         if (index === indexRowElement) {
                             let asideText = item.innerText.split('\n');
-                            let asideHeadText = asideText[0];
-                            let asideDescriptionText = asideText[1];
-                            console.log(asideHeadText, asideDescriptionText);
+                            data.productTitle = asideText[0];
+                            data.productDimensions = asideText[1];
                         }
                     });
                 });
+                modalOpen(data);
             })
         });
 
@@ -166,6 +277,14 @@ window.onload = function() {
                 });
             });
 
+            tableAsideText.forEach((item) => {
+                item.childNodes.forEach((item, index) => {
+                    if (index === indexRowElement) {
+                        item.classList.remove('hover');
+                    }
+                });
+            });
+
             currentElement = null;
             parentElement = null;
             indexColElement = null;
@@ -173,4 +292,6 @@ window.onload = function() {
         });
     }
 }
+
+
 
