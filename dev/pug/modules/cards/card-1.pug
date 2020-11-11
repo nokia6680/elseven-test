@@ -9,7 +9,9 @@
     </div>
     <div class="cards__content cards-container">
         <div class="cards__img-wrapper cards__img-wrapper--new">
-            <img class="cards__img" src="static/images/content/card-1-example.jpg" width="373" height="240">
+            <picture class="cards__img-frame">
+                <img class="cards__img" src="static/images/content/card-1-example.jpg" width="373" height="240">
+            </picture>
         </div>
         <div class="cards__filters">
             <h1>Тостерная №1</h1>
@@ -66,23 +68,28 @@
                 span.title-main Наименование формы
                 span.title-dimensions Размер, мм
             .title-block
-                img(src="static/images/content/table-1-title-example-1.jpg")
+                picture.aside-img-frame.noimage
+                    img.title-img(src="static/images/content/table-1-title-example-1.jpg")
                 span.title-block-head Тостерная №7
                     span ( 280 х 80 х 75)
             .title-block
-                img(src="static/images/content/table-1-title-example-2.jpg")
+                picture.aside-img-frame
+                    img.title-img(src="static/images/content/table-1-title-example-2.jpg")
                 span.title-block-head Тостерная №8
                     span ( 280 х 80 х 75)
             .title-block
-                img(src="static/images/content/table-1-title-example-3.jpg")
+                picture.aside-img-frame
+                    img.title-img(src="static/images/content/table-1-title-example-3.jpg")
                 span.title-block-head Тостерная №9
                     span (198 х 113 х 93)
             .title-block
-                img(src="static/images/content/table-1-title-example-4.jpg")
+                picture.aside-img-frame
+                    img.title-img(src="static/images/content/table-1-title-example-4.jpg")
                 span.title-block-head Рулетница
                     span (307 х 107 х 53)
             .title-block
-                img(src="static/images/content/table-1-title-example-5.jpg")
+                picture.aside-img-frame
+                    img.title-img(src="static/images/content/table-1-title-example-5.jpg")
                 span.title-block-head Волнистая
                     span (320 х 125 х 60)
         .table-body
@@ -102,21 +109,29 @@
                     span с ручками
             .body-photo-block
                 .body-photo
-                    img(src="static/images/content/table-1-example-1.jpg")
+                    picture.body-img-frame.noimage
+                        img.title-img(src="static/images/content/table-1-example-1.jpg")
                 .body-photo
-                    img(src="static/images/content/table-1-example-2.jpg")
+                    picture.body-img-frame
+                        img.title-img(src="static/images/content/table-1-example-2.jpg")
                 .body-photo
-                    img(src="static/images/content/table-1-example-3.jpg")
+                    picture.body-img-frame
+                        img.title-img(src="static/images/content/table-1-example-3.jpg")
                 .body-photo
-                    img(src="static/images/content/table-1-example-4.jpg")
+                    picture.body-img-frame
+                        img.title-img(src="static/images/content/table-1-example-4.jpg")
                 .body-photo
-                    img(src="static/images/content/table-1-example-5.jpg")
+                    picture.body-img-frame
+                        img.title-img(src="static/images/content/table-1-example-5.jpg")
                 .body-photo
-                    img(src="static/images/content/table-1-example-6.jpg")
+                    picture.body-img-frame
+                        img.title-img(src="static/images/content/table-1-example-6.jpg")
                 .body-photo
-                    img(src="static/images/content/table-1-example-7.jpg")
+                    picture.body-img-frame
+                        img.title-img(src="static/images/content/table-1-example-7.jpg")
                 .body-photo
-                    img(src="static/images/content/table-1-example-8.jpg")
+                    picture.body-img-frame
+                        img.title-img(src="static/images/content/table-1-example-8.jpg")
             .body-block
                 .body-content 238 ₽
                     <button type="button" alt="Выбрать товар">Выбрать</button>

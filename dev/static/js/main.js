@@ -293,5 +293,35 @@ window.onload = function() {
     }
 }
 
+// Увеличение  картинок
+$(document).ready(function() {
+
+    $(".title-img, .cards__img").click(function(){
+        var img = $(this);
+        var src = img.attr('src');
+        $("body").append("<div class='popup-image'>"+
+            "<div class='popup-image__bg'></div>"+
+            "<img class='popup-image__pic' src="+src+">"+
+            "</div>");
+        $(".popup-image").fadeIn(800);
+        $(".popup-image__bg").click(function(){
+            $(".popup-image").fadeOut(800);
+            setTimeout(function() {
+                $(".popup-image").remove();
+            }, 800);
+        });
+        $(document).keydown(function(evt){
+            console.log(evt);
+            if(evt.keyCode == 27){
+                $(".popup-image").fadeOut(800);
+                setTimeout(function() {
+                    $(".popup-image").remove();
+                }, 800);
+            }
+        });
+    });
+
+});
+
 
 
