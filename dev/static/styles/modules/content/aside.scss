@@ -22,6 +22,16 @@
 
             &.empty {
                 .aside__name {
+                    a {
+                        color: $color-white;
+                        text-decoration: none;
+
+                    }
+
+                    a:visited {
+                        color: $color-white;
+                    }
+                    
                     &::after {
                         display: none;
                     }
