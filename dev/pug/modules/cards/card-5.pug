@@ -9,7 +9,9 @@
     </div>
     <div class="cards__content cards-container">
         <div class="cards__img-wrapper cards__img-wrapper--new">
-          <img class="cards__img" src="static/images/content/card-5-example.jpg" width="373" height="240">
+            <picture class="cards__img-frame">
+                <img class="cards__img" src="static/images/content/card-5-example.jpg" width="373" height="240">
+            </picture>
         </div>
         <div class="cards__filters">
             <h1>Пресс-форма для ветчин и мяса</h1>
@@ -49,15 +51,18 @@
             .body-main-title Цена
         .table-aside
             .title-block
-                img(src="static/images/content/table-5-example-1.jpg")
+                picture.aside-img-frame
+                    img.title-img(src="static/images/content/table-5-example-1.jpg")
                 span Пф-145К
                     span (145 х 65)
             .title-block
-                img(src="static/images/content/table-5-example-2.jpg")
+                picture.aside-img-frame
+                    img.title-img(src="static/images/content/table-5-example-2.jpg")
                 span Пф-160К
                     span (160 х 100)
             .title-block
-                img(src="static/images/content/table-5-example-3.jpg")
+                picture.aside-img-frame
+                    img.title-img(src="static/images/content/table-5-example-3.jpg")
                 span ПФ-185К
                     span (185 х 135)
         .table-body

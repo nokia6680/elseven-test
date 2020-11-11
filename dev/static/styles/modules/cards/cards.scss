@@ -46,6 +46,21 @@
   }
 }
 
+.cards__img-frame {
+  display: block;
+  width: 373px;
+  height: 240px;
+  background-color: #ffffff;
+  background-image: url("data:image/svg+xml,%3Csvg width='57' height='57' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M50.473.351H6.906C3.482.351.682 3.151.682 6.575v43.567c0 3.423 2.8 6.224 6.224 6.224h43.567c3.423 0 6.224-2.8 6.224-6.224V6.575c0-3.423-2.8-6.224-6.224-6.224zm0 6.224v43.567H6.906V6.575h43.567zm-24.46 33.391l9.336-12.043L47.36 43.918H10.018l9.335-12.012 6.66 8.06z' fill='%23000' fill-opacity='.54'/%3E%3C/svg%3E");
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+  background-size: 20%;
+
+  &.noimage .cards__img {
+    display: none;
+  }
+}
+
 .cards__img {
   position: relative;
   width: 373px;
@@ -261,7 +276,7 @@
       &:hover,
       &:focus {
         border-color: $color-blue;
-        box-shadow: inset 0px 0px 0px 1px $color-blue;
+        box-shadow: inset 0 0 0 1px $color-blue;
         background: linear-gradient(0deg, rgba(47, 128, 237, 0.05), rgba(47, 128, 237, 0.05)), #FFFFFF;
         outline: none;
       }
@@ -280,7 +295,7 @@
 
       &.invalid {
         border-color: $color-red;
-        box-shadow: inset 0px 0px 0px 1px $color-red;
+        box-shadow: inset 0 0 0 1px $color-red;
         background: linear-gradient(0deg, rgba(235, 87, 87, 0.1), rgba(235, 87, 87, 0.1)), #FFFFFF;
         outline: none;
       }
@@ -297,19 +312,19 @@
 
       &:hover,
       &:focus {
-        color: $color-blue;
+        color: $color-black;
       }
 
       &:hover ~ input ,
       &:focus ~ input {
         border-color: $color-blue;
-        box-shadow: inset 0px 0px 0px 1px $color-blue;
+        box-shadow: inset 0 0 0 1px $color-blue;
         background: linear-gradient(0deg, rgba(47, 128, 237, 0.05), rgba(47, 128, 237, 0.05)), #FFFFFF;
         outline: none;
       }
 
       &:active {
-        opacity: 0.8;
+        opacity: 0.65;
       }
     }
 
@@ -331,19 +346,19 @@
 
       &:hover::before,
       &:focus::before {
-        background-color: $color-blue;
+        background-color:$color-black;
       }
 
       &:hover ~ input ,
       &:focus ~ input {
         border-color: $color-blue;
-        box-shadow: inset 0px 0px 0px 1px $color-blue;
+        box-shadow: inset 0 0 0 1px $color-blue;
         background: linear-gradient(0deg, rgba(47, 128, 237, 0.05), rgba(47, 128, 237, 0.05)), #FFFFFF;
         outline: none;
       }
 
       &:active::before {
-        opacity: 0.8;
+        opacity: 0.65;
       }
     }
 
