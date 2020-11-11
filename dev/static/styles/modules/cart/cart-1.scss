@@ -105,6 +105,33 @@
             border-radius: 3px;
 
             background-color: $color-white;
+
+            &:hover,
+            &:active {
+                border-color: $color-blue;
+                box-shadow: inset 0px 0px 0px 1px $color-blue;
+                background: linear-gradient(0deg, rgba(47, 128, 237, 0.05), rgba(47, 128, 237, 0.05)), #FFFFFF;
+                outline: none;
+            }
+
+            &:disabled {
+                border: none;
+                box-shadow: none;
+                background: rgba(152, 160, 170, 0.15);
+
+                &:hover,
+                &:focus {
+                    border: none;
+                    background: rgba(152, 160, 170, 0.15);
+                }
+            }
+
+            &.invalid {
+                border-color: $color-red;
+                box-shadow: inset 0px 0px 0px 1px $color-red;
+                background: linear-gradient(0deg, rgba(235, 87, 87, 0.1), rgba(235, 87, 87, 0.1)), #FFFFFF;
+                outline: none;
+            }
         }
 
         .minus,

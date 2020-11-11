@@ -58,10 +58,10 @@ mixin cart-item(image, name, info, quantity, price)
 				h3.cart-1__item-name=name
 				span.cart-1__item-specs=info
 		.cart-1__item-bottom
-			.cart-1__item-quantity
+			.cart-1__item-quantity.cards__input-quantity
 				button(type="button").minus
 				input(type="number" id="quantity-1" name="quantity-1" min="" +quantity value="1").cart-1__item-input
-				span(type="button").plus
+				button(type="button").plus
 			span.cart-1__item-price=price
 			span.cart-1__item-sum=price
 			button(type="button").cart-1__item-remove
