@@ -115,8 +115,13 @@
 
 .cards__filter {
   display: flex;
-  flex-flow: row wrap;
-  margin-bottom: 8px;
+  flex-flow: column;
+
+  & .cards__filter-wrapper {
+    display: flex;
+    flex-flow: row wrap;
+    margin-bottom: 8px;
+  }
 
   & .cards__filter-tag {
     display: block;
@@ -430,7 +435,7 @@
 .cards__button-in-cart {
   width: 216px;
   min-height: 42px;
-  margin-top: 23px;
+  margin-top: 31px;
   @include my-font-setting(16px, 24px, 500, $color-white, $font-alt);
   border: none;
   border-radius: 3px;
@@ -465,6 +470,7 @@
     padding: 0 31px;
   }
 
+  .cards__img-frame,
   .cards__img {
     width: 214px;
     height: 138px;
@@ -497,14 +503,20 @@
     }
   }
 
+  .cards__filter {
+    & .cards__filter-wrapper {
+      flex-flow: column;
+    }
+  }
+
   .cards__price {
-    margin-left: 33px;
-    margin-top: 27px;
+    margin-left: 138px;
+    margin-top: -78px;
     @include my-font-setting(28px, 42px, 700);
   }
 
   .cards__button-in-cart {
-    margin-top: 0;
+    margin-top: 36px;
   }
 }
 
@@ -518,6 +530,7 @@
     padding: 0 24px;
   }
 
+  .cards__img-frame,
   .cards__img {
     width: 272px;
     height: 175px;
@@ -545,10 +558,6 @@
     margin-bottom: 24px;
   }
 
-  .cards__filter {
-    margin-bottom: 9px;
-  }
-
   .cards__filter-input {
     margin-bottom: 24px;
 
@@ -567,7 +576,7 @@
   }
 
   .cards__price {
-    margin-top: 36px;
+    margin-top: -80px;
     @include my-font-setting(28px, 42px, 700);
   }
 }

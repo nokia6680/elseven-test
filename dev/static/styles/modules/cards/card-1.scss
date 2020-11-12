@@ -1,14 +1,14 @@
 .cards.card-1 {
   padding-bottom: 80px;
+
+  & .cards__filter-wrapper {
+    margin-bottom: 0;
+  }
 }
 
 @media (max-width: $laptop-sm) {
   .cards.card-1 {
     padding-bottom: 96px;
-  }
-
-  .card-1 .cards__filter {
-    margin-bottom: 0;
   }
 
   .card-1 .cards__filter-input {
@@ -37,10 +37,6 @@
       margin-top: -15px;
     }
   }
-
-  .card-1 .cards__button-in-cart {
-    margin-top: 0;
-  }
 }
 
 @media (max-width: $tablet) {
@@ -68,9 +64,5 @@
     & img {
       margin-top: 0;
     }
-  }
-
-  .card-1 .cards__button-in-cart {
-    margin-top: -2px;
   }
 }

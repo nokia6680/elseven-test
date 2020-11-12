@@ -1,4 +1,4 @@
-.card-2 {
+.cart-2 {
   padding-top: 60px;
   padding-bottom: 127px;
 
@@ -35,7 +35,7 @@
     }
 
     &--customer {
-      .card-2__order-form-group {
+      .cart-2__order-form-group {
         &:nth-of-type(odd) {
           margin-right: 4%;
         }
@@ -43,12 +43,12 @@
     }
 
     &--address {
-      .card-2__order-form-group {
+      .cart-2__order-form-group {
         &:nth-of-type(odd) {
           margin-right: 0;
         }
 
-        &.card-2__order-form-group--region {
+        &.cart-2__order-form-group--region {
           margin-right: 32px;
         }
       }
@@ -116,11 +116,11 @@
         margin-bottom: 38px;
       }
 
-      .card-2__order-wrapper {
+      .cart-2__order-wrapper {
         flex-flow: column;
       }
 
-      .card-2__order-form-group {
+      .cart-2__order-form-group {
         width: 100%;
         display: flex;
         flex-flow: row;
@@ -142,11 +142,11 @@
       padding-top: 6px;
       border: none;
 
-      .card-2__order-label-checkbox {
+      .cart-2__order-label-checkbox {
         width: 70%;
       }
 
-      .card-2__order-label-checkbox {
+      .cart-2__order-label-checkbox {
         width: 70%;
       }
     }
@@ -381,6 +381,7 @@
       @include my-font-setting(16px, 24px, 400, $color-grey, $font-alt);
       border: none;
       background: transparent;
+      box-shadow: none;
       cursor: pointer;
 
       &::before {
@@ -436,34 +437,34 @@
   }
 }
 
-.card-2__order-radio {
-  &:checked ~ .card-2__order-label-radio::after {
+.cart-2__order-radio {
+  &:checked ~ .cart-2__order-label-radio::after {
     border: 1px solid $color-blue;
     background-color: $color-blue;
   }
 
-  &:checked ~ .card-2__order-label-radio::before {
+  &:checked ~ .cart-2__order-label-radio::before {
     display: block;
   }
 
-  &:disabled ~ .card-2__order-label-radio::after {
+  &:disabled ~ .cart-2__order-label-radio::after {
     border-color: $color-grey;
     background: $color-grey;
     opacity: 0.15;
   }
 }
 
-.card-2__order-checkbox, {
-  &:checked ~ .card-2__order-label-checkbox::after {
+.cart-2__order-checkbox, {
+  &:checked ~ .cart-2__order-label-checkbox::after {
     border: 1px solid $color-blue;
     background-color: $color-blue;
   }
 
-  &:checked ~ .card-2__order-label-checkbox::before {
+  &:checked ~ .cart-2__order-label-checkbox::before {
     display: block;
   }
 
-  &:disabled ~ .card-2__order-label-checkbox::after {
+  &:disabled ~ .cart-2__order-label-checkbox::after {
     border-color: $color-grey;
     background: $color-grey;
     opacity: 0.15;
@@ -471,7 +472,7 @@
 }
 
 @media (max-width: $laptop-lg) {
-  .card-2 {
+  .cart-2 {
     &__wrapper {
       padding: 0 9px 127px 224px;
     }
@@ -497,7 +498,7 @@
 }
 
 @media (max-width: $laptop-md) {
-  .card-2 {
+  .cart-2 {
     &__wrapper {
       padding: 0 56px;
     }
@@ -523,7 +524,7 @@
 }
 
 @media (max-width: $laptop-sm) {
-  .card-2 {
+  .cart-2 {
     padding-top: 46px;
     padding-bottom: 96px;
 
@@ -587,7 +588,7 @@
 }
 
 @media (max-width: $tablet) {
-  .card-2 {
+  .cart-2 {
     padding-top: 24px;
     padding-bottom: 64px;
 
@@ -609,7 +610,7 @@
       }
 
       &--customer {
-        .card-2__order-form-group {
+        .cart-2__order-form-group {
           &:nth-of-type(odd) {
             margin-right:0;
           }
@@ -617,8 +618,8 @@
       }
 
       &--address {
-        .card-2__order-form-group {
-          &.card-2__order-form-group--region {
+        .cart-2__order-form-group {
+          &.cart-2__order-form-group--region {
             margin-right: 0;
           }
         }
@@ -627,7 +628,7 @@
       &--payment {
         padding-bottom: 18px;
 
-        .card-2__order-label-radio {
+        .cart-2__order-label-radio {
           margin-right: 0;
         }
       }
@@ -635,12 +636,12 @@
       &--agreement {
         padding-top: 3px;
 
-        .card-2__order-label-checkbox {
+        .cart-2__order-label-checkbox {
           width: 100%;
           margin-bottom: 24px;
         }
 
-        .card-2__button-submit {
+        .cart-2__button-submit {
           margin: 0 auto;
         }
       }

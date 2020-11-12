@@ -283,9 +283,9 @@ $(document).ready(function () {
   $(".title-img, .cards__img").click(function () {
     var img = $(this);
     var src = img.attr('src');
-    $("body").append("<div class='popup-image'>" + "<div class='popup-image__bg'></div>" + "<img class='popup-image__pic' src=" + src + ">" + "</div>");
+    $("body").append("<div class='popup-image'>" + "<div class='popup-image__bg'></div>" + "<div class='popup-image__wrapper'><img class='popup-image__pic' src=" + src + "><button class='popup-image__close-button' type='button'><span class='visually-hidden'>Закрыть окно</span></button></div>" + "</div>");
     $(".popup-image").fadeIn(800);
-    $(".popup-image__bg").click(function () {
+    $(".popup-image__bg, .popup-image__close-button").click(function () {
       $(".popup-image").fadeOut(800);
       setTimeout(function () {
         $(".popup-image").remove();

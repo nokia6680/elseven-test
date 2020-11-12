@@ -2,9 +2,15 @@
   padding-bottom: 80px;
 }
 
-.card-5 .cards__filter-input {
-  &--quantity {
-    margin-right: 200px;
+.card-5 {
+  & .cards__filter-wrapper {
+    margin-bottom: 0;
+  }
+
+  & .cards__filter-input {
+    &--quantity {
+      margin-right: 200px;
+    }
   }
 }
 
@@ -37,29 +43,30 @@
     padding-bottom: 31px;
   }
 
-  .card-5 .cards__filter-input {
+  .card-5 {
+    & .cards__filter-input {
+      &--form-type {
+        display: flex;
+        flex-flow: column;
+      }
 
-    &--form-type {
-      display: flex;
-      flex-flow: column;
+      &--form-type {
+        margin-bottom: 24px;
+      }
+
+      & .selectric {
+        width: 100%;
+        margin-bottom: 23px;
+      }
+
+      & img {
+        margin-top: 0;
+      }
     }
 
-    &--form-type {
-      margin-bottom: 24px;
+    & .cards__price {
+      margin-top: -71px;
     }
-
-    & .selectric {
-      width: 100%;
-      margin-bottom: 23px;
-    }
-
-    & img {
-      margin-top: 0;
-    }
-  }
-
-  .card-5 .cards__button-in-cart {
-    margin-top: -2px;
   }
 }
 

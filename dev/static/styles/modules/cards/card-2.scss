@@ -1,15 +1,30 @@
 .cards.card-2 {
   padding-bottom: 72px;
 }
+.card-2 {
+  & .cards__price {
+    margin-top: -8px;
+    margin-bottom: 8px;
+  }
+}
 
 @media (max-width: $laptop-sm) {
   .cards.card-2 {
     padding-bottom: 55px;
   }
 
-  .card-2 .cards__filter-input {
-    &--side-height {
+  .card-2 {
+    & .cards__filter .cards__filter-wrapper {
+      flex-flow: row wrap;
+    }
+
+    & .cards__filter-input--side-height {
       margin-right: 32px;
+    }
+
+    & .cards__price {
+      margin-top: -87px;
+      margin-bottom: 0;
     }
   }
 }
@@ -19,9 +34,21 @@
     padding-bottom: 31px;
   }
 
-  .card-2 .cards__filter-input {
-    &--side-height {
+  .card-2 {
+    & .cards__filter {
+      margin-bottom: 0;
+    }
+
+    & .cards__filter .cards__filter-wrapper {
+      margin-bottom: 9px;
+    }
+
+    & .cards__filter-input--side-height {
       margin-right: 0;
+    }
+
+    & .cards__price {
+      margin-top: -80px;
     }
   }
 }

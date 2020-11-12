@@ -2,18 +2,29 @@
   padding-bottom: 81px;
 }
 
+.card-4 {
+  & .cards__filter-wrapper {
+    margin-bottom: 0;
+  }
+}
+
 @media (max-width: $laptop-sm) {
   .cards.card-4 {
     padding-bottom: 55px;
   }
 
-  .card-4 .cards__filter-input {
-    &--height {
-      margin-right: 0;
+  .card-4 {
+    & .cards__filter-wrapper {
+      flex-flow: row wrap;
     }
 
-    &--diameter {
-      margin-right: 32px;
+    & .cards__filter-input {
+      &--height {
+        margin-right: 0;
+      }
+      &--diameter {
+        margin-right: 32px;
+      }
     }
   }
 }
@@ -23,20 +34,22 @@
     padding-bottom: 31px;
   }
 
-  .card-4 .cards__filter-input {
-    &--thickness {
-      margin-bottom: 33px;
+  .card-4 {
+    .cards__filter-input {
+      &--thickness {
+        margin-bottom: 33px;
+      }
+
+      &--height,
+      &--diameter {
+        width: 100%;
+        margin-right: 0;
+      }
     }
 
-    &--height,
-    &--diameter {
-      width: 100%;
-      margin-right: 0;
+    & .cards__price {
+      margin-top: -71px;
     }
-  }
-
-  .card-4 .cards__button-in-cart {
-    margin-top: -2px;
   }
 }
 
