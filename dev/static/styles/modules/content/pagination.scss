@@ -55,6 +55,11 @@
             color: $color-white;
             transition: 0.2s linear;
         }
+
+
+        &.active {
+            border: 1px solid $color-blue;
+        }
     }
 
     &__prev,
