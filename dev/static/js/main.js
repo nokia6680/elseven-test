@@ -55,7 +55,7 @@ if (quantityBlocks) {
             evt.preventDefault();
             if (evt.target.classList.contains('plus')) {
                 quantityInput.value = parseFloat(quantityInput.value) + 1;
-                const event = new CustomEvent('onchange', {
+                const event = new CustomEvent('change', {
                     bubbles: true,
                     detail: { value: quantityInput.value }
                 });
@@ -63,13 +63,13 @@ if (quantityBlocks) {
             }
             if (evt.target.classList.contains('minus') && parseFloat(quantityInput.value) !== 1) {
                 quantityInput.value = parseFloat(quantityInput.value) - 1;
-                const event = new CustomEvent('onchange', {
+                const event = new CustomEvent('change', {
                     bubbles: true,
                     detail: { value: quantityInput.value }
                 });
                 quantityInput.dispatchEvent(event);
             }
-        })
+        });
     });
 }
 
@@ -77,10 +77,27 @@ if (quantityBlocks) {
 let cartItems = document.querySelectorAll('.cart-1__item')
 
 if (cartItems) {
+    let fullSum = document.querySelector('.cart-1__checkout-overall');
+    const allSum = document.querySelectorAll('.cart-1__item-sum');
+    fullSum.textContent = `${Array.from(allSum).reduce((sum, current) => sum + parseInt(current.textContent), 0)} ₽`;
+
     Array.from(cartItems).forEach((item) => {
-        item.addEventListener('onchange', function (evt) {
-            console.log(evt.currentTarget);
-            console.log(evt.detail.value);
+        const productRemove = item.querySelector('.cart-1__item-remove');
+
+        productRemove.addEventListener('click', function (evt) {
+            evt.preventDefault();
+            item.remove();
+        });
+
+        item.addEventListener('change', function (evt) {
+            const price = item.querySelector('.cart-1__item-price');
+            const sum = item.querySelector('.cart-1__item-sum');
+            if (!evt.target.value) {
+                sum.textContent = `${evt.detail.value * parseInt(price.textContent)} ₽`;
+            } else {
+                sum.textContent = `${evt.target.value * parseInt(price.textContent)} ₽`;
+            }
+            fullSum.textContent = `${Array.from(allSum).reduce((sum, current) => sum + parseInt(current.textContent), 0)} ₽`;
         });
     });
 };
@@ -90,7 +107,7 @@ if (cartItems) {
 function modalOpen(data) {
     const ESC_BUTTON = 27;
 
-    let modal = document.querySelector('.cards-modal');
+    const modal = document.querySelector('.cards-modal');
 
     if (modal) {
 
