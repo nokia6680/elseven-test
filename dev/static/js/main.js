@@ -46,29 +46,44 @@ if (priceOpener) {
     });
 };
 
-$(function() {
-    var quantityBlock = $('.cards__input-quantity');
-    var quantityInput = quantityBlock.find('input');
+let quantityBlocks = document.querySelectorAll('.cards__input-quantity');
 
-    quantityBlock.on('click', function (evt) {
-        evt.preventDefault();
-        if (evt.target.classList.contains('plus')) {
-            quantityInput.val(parseFloat(quantityInput.val()) + 1);
-        }
-        if (evt.target.classList.contains('minus') && parseFloat(quantityInput.val()) !== 1) {
-            quantityInput.val(parseFloat(quantityInput.val()) - 1);
-        }
+if (quantityBlocks) {
+    Array.from(quantityBlocks).forEach((block) => {
+        const quantityInput = block.querySelector('input');
+        block.addEventListener('click', function (evt) {
+            evt.preventDefault();
+            if (evt.target.classList.contains('plus')) {
+                quantityInput.value = parseFloat(quantityInput.value) + 1;
+                const event = new CustomEvent('onchange', {
+                    bubbles: true,
+                    detail: { value: quantityInput.value }
+                });
+                quantityInput.dispatchEvent(event);
+            }
+            if (evt.target.classList.contains('minus') && parseFloat(quantityInput.value) !== 1) {
+                quantityInput.value = parseFloat(quantityInput.value) - 1;
+                const event = new CustomEvent('onchange', {
+                    bubbles: true,
+                    detail: { value: quantityInput.value }
+                });
+                quantityInput.dispatchEvent(event);
+            }
+        })
     });
-});
+}
 
-// Спрягаем слова
-// function wordСonjugation(n, text_forms) {
-//     n = Math.abs(n) % 100; var n1 = n % 10;
-//     if (n > 10 && n < 20) { return text_forms[2]; }
-//     if (n1 > 1 && n1 < 5) { return text_forms[1]; }
-//     if (n1 == 1) { return text_forms[0]; }
-//     return text_forms[2];
-// }
+// Изменение цены в корзине
+let cartItems = document.querySelectorAll('.cart-1__item')
+
+if (cartItems) {
+    Array.from(cartItems).forEach((item) => {
+        item.addEventListener('onchange', function (evt) {
+            console.log(evt.currentTarget);
+            console.log(evt.detail.value);
+        });
+    });
+};
 
 // Модальная требуха
 
@@ -311,7 +326,6 @@ $(document).ready(function() {
             }, 800);
         });
         $(document).keydown(function(evt) {
-            console.log(evt);
             if(evt.keyCode == 27){
                 $(".popup-image").fadeOut(800);
                 setTimeout(function() {
@@ -322,6 +336,5 @@ $(document).ready(function() {
     });
 
 });
-
 
 
