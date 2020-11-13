@@ -56,7 +56,7 @@ if (quantityBlocks) {
 
       if (evt.target.classList.contains('plus')) {
         quantityInput.value = parseFloat(quantityInput.value) + 1;
-        var event = new CustomEvent('onchange', {
+        var event = new CustomEvent('change', {
           bubbles: true,
           detail: {
             value: quantityInput.value
@@ -68,7 +68,7 @@ if (quantityBlocks) {
       if (evt.target.classList.contains('minus') && parseFloat(quantityInput.value) !== 1) {
         quantityInput.value = parseFloat(quantityInput.value) - 1;
 
-        var _event = new CustomEvent('onchange', {
+        var _event = new CustomEvent('change', {
           bubbles: true,
           detail: {
             value: quantityInput.value
@@ -85,10 +85,30 @@ if (quantityBlocks) {
 var cartItems = document.querySelectorAll('.cart-1__item');
 
 if (cartItems) {
+  var fullSum = document.querySelector('.cart-1__checkout-overall');
+  var allSum = document.querySelectorAll('.cart-1__item-sum');
+  fullSum.textContent = "".concat(Array.from(allSum).reduce(function (sum, current) {
+    return sum + parseInt(current.textContent);
+  }, 0), " \u20BD");
   Array.from(cartItems).forEach(function (item) {
-    item.addEventListener('onchange', function (evt) {
-      console.log(evt.currentTarget);
-      console.log(evt.detail.value);
+    var productRemove = item.querySelector('.cart-1__item-remove');
+    productRemove.addEventListener('click', function (evt) {
+      evt.preventDefault();
+      item.remove();
+    });
+    item.addEventListener('change', function (evt) {
+      var price = item.querySelector('.cart-1__item-price');
+      var sum = item.querySelector('.cart-1__item-sum');
+
+      if (!evt.target.value) {
+        sum.textContent = "".concat(evt.detail.value * parseInt(price.textContent), " \u20BD");
+      } else {
+        sum.textContent = "".concat(evt.target.value * parseInt(price.textContent), " \u20BD");
+      }
+
+      fullSum.textContent = "".concat(Array.from(allSum).reduce(function (sum, current) {
+        return sum + parseInt(current.textContent);
+      }, 0), " \u20BD");
     });
   });
 }
