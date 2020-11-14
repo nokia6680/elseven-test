@@ -112,8 +112,8 @@ function modalOpen(data) {
     if (modal) {
 
         let modalCloseButton = modal.querySelector('.modal-form__close-button');
-        let modalTitle = modal.querySelector('.cards-modal h4');
-        let modalTitleInput = modal.querySelector('input[name=title]');
+        let modalTitleDescr = modal.querySelector('.cards-modal__title-descr');
+        let modalTitleDescrInput = modal.querySelector('input[name=title]');
         let modalDimensions = modal.querySelector('.cards-modal__dimensions');
         let modalDimensionsInput = modal.querySelector('input[name=dimensions]');
         let modalDescriptionFirst = modal.querySelector('.cards-modal__description .first');
@@ -121,7 +121,9 @@ function modalOpen(data) {
         let modalDescriptionInput = modal.querySelector('input[name=description]');
         let modalPrice = modal.querySelector('.cards-modal__price');
         let modalPriceInput = modal.querySelector('input[name=price]');
+        let modalSubmitButton = modal.querySelector('button[type=submit]');
         let overlay = document.querySelector('.overlay');
+        let body = document.querySelector('body');
 
         function onDocumentKeyDown(evt) {
             if (evt.keyCode === ESC_BUTTON && modal.classList.contains("cards-modal--show")) {
@@ -145,12 +147,13 @@ function modalOpen(data) {
             modal.classList.remove("cards-modal--show");
             overlay.classList.remove("overlay--show");
             modalCloseButton.removeEventListener("click", onModalCloseButton);
+            body.classList.remove("no-scroll");
             window.removeEventListener("keydown", onDocumentKeyDown);
         }
 
         function _modalOpen(data) {
-            (data.asideTitle) ? modalTitle.innerHTML = `<span>${data.asideTitle}: </span>${data.productTitle}` : modalTitle.textContent = `${data.productTitle}`;;
-            modalTitleInput.value = data.productTitle;
+            (data.asideTitle) ? modalTitleDescr.innerHTML = `<span>${data.asideTitle}: </span>${data.productTitle}` : modalTitleDescr.textContent = `${data.productTitle}`;;
+            modalTitleDescrInput.value = data.productTitle;
             if (data.asideDimensions && data.productDimensions) {
                 modalDimensions.textContent = `${data.asideDimensions}: ${data.productDimensions}` ;
                 modalDimensionsInput.value = data.productDimensions;
@@ -166,8 +169,10 @@ function modalOpen(data) {
 
             modalPrice.textContent = data.price;
             modalPriceInput.value = data.price;
+            modalSubmitButton.dataset.variationId = data.buttonId;
             modal.classList.add("cards-modal--show");
             overlay.classList.add("overlay--show");
+            body.classList.add("no-scroll");
             modalCloseButton.addEventListener("click", onModalCloseButton);
             overlay.addEventListener("click", onOverlayClick);
             window.addEventListener("keydown", onDocumentKeyDown);
@@ -258,6 +263,7 @@ window.onload = function() {
         popupButtons.forEach((item) => {
             item.addEventListener("click", function (evt) {
                 evt.preventDefault();
+                data.buttonId = item.dataset.variationId;
                 data.price = evt.target.closest('.body-content').innerText.split('\n')[0];
                 headText.forEach((item) => {
                     item.childNodes.forEach((item, index) => {
@@ -266,14 +272,12 @@ window.onload = function() {
                         }
                     });
                 });
-                tableAsideText.forEach((item) => {
-                    item.childNodes.forEach((item, index) => {
-                        if (index === indexRowElement) {
-                            let asideText = item.innerText.split('\n');
-                            data.productTitle = asideText[0];
-                            data.productDimensions = asideText[1];
-                        }
-                    });
+                tableAsideText.forEach((item, index) => {
+                    if (index === indexRowElement) {
+                        let asideText = item.innerText.split('\n');
+                        data.productTitle = asideText[0];
+                        data.productDimensions = asideText[1];
+                    }
                 });
                 modalOpen(data);
             })

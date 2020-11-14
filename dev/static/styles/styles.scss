@@ -70,5 +70,9 @@ button { outline: none; }
   overflow: hidden;
 }
 
+.no-scroll {
+  overflow: hidden;
+}
+
 //Модули
 @import "modules/modules";

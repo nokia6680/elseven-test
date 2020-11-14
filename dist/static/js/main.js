@@ -142,13 +142,14 @@ function modalOpen(data) {
       modal.classList.remove("cards-modal--show");
       overlay.classList.remove("overlay--show");
       modalCloseButton.removeEventListener("click", onModalCloseButton);
+      body.classList.remove("no-scroll");
       window.removeEventListener("keydown", onDocumentKeyDown);
     };
 
     var _modalOpen = function _modalOpen(data) {
-      data.asideTitle ? modalTitle.innerHTML = "<span>".concat(data.asideTitle, ": </span>").concat(data.productTitle) : modalTitle.textContent = "".concat(data.productTitle);
+      data.asideTitle ? modalTitleDescr.innerHTML = "<span>".concat(data.asideTitle, ": </span>").concat(data.productTitle) : modalTitleDescr.textContent = "".concat(data.productTitle);
       ;
-      modalTitleInput.value = data.productTitle;
+      modalTitleDescrInput.value = data.productTitle;
 
       if (data.asideDimensions && data.productDimensions) {
         modalDimensions.textContent = "".concat(data.asideDimensions, ": ").concat(data.productDimensions);
@@ -165,16 +166,18 @@ function modalOpen(data) {
 
       modalPrice.textContent = data.price;
       modalPriceInput.value = data.price;
+      modalSubmitButton.dataset.variationId = data.buttonId;
       modal.classList.add("cards-modal--show");
       overlay.classList.add("overlay--show");
+      body.classList.add("no-scroll");
       modalCloseButton.addEventListener("click", onModalCloseButton);
       overlay.addEventListener("click", onOverlayClick);
       window.addEventListener("keydown", onDocumentKeyDown);
     };
 
     var modalCloseButton = modal.querySelector('.modal-form__close-button');
-    var modalTitle = modal.querySelector('.cards-modal h4');
-    var modalTitleInput = modal.querySelector('input[name=title]');
+    var modalTitleDescr = modal.querySelector('.cards-modal__title-descr');
+    var modalTitleDescrInput = modal.querySelector('input[name=title]');
     var modalDimensions = modal.querySelector('.cards-modal__dimensions');
     var modalDimensionsInput = modal.querySelector('input[name=dimensions]');
     var modalDescriptionFirst = modal.querySelector('.cards-modal__description .first');
@@ -182,7 +185,9 @@ function modalOpen(data) {
     var modalDescriptionInput = modal.querySelector('input[name=description]');
     var modalPrice = modal.querySelector('.cards-modal__price');
     var modalPriceInput = modal.querySelector('input[name=price]');
+    var modalSubmitButton = modal.querySelector('button[type=submit]');
     var overlay = document.querySelector('.overlay');
+    var body = document.querySelector('body');
 
     _modalOpen(data);
   }
@@ -258,6 +263,7 @@ window.onload = function () {
     popupButtons.forEach(function (item) {
       item.addEventListener("click", function (evt) {
         evt.preventDefault();
+        data.buttonId = item.dataset.variationId;
         data.price = evt.target.closest('.body-content').innerText.split('\n')[0];
         headText.forEach(function (item) {
           item.childNodes.forEach(function (item, index) {
@@ -266,14 +272,12 @@ window.onload = function () {
             }
           });
         });
-        tableAsideText.forEach(function (item) {
-          item.childNodes.forEach(function (item, index) {
-            if (index === indexRowElement) {
-              var asideText = item.innerText.split('\n');
-              data.productTitle = asideText[0];
-              data.productDimensions = asideText[1];
-            }
-          });
+        tableAsideText.forEach(function (item, index) {
+          if (index === indexRowElement) {
+            var asideText = item.innerText.split('\n');
+            data.productTitle = asideText[0];
+            data.productDimensions = asideText[1];
+          }
         });
         modalOpen(data);
       });
