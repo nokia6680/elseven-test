@@ -82,15 +82,15 @@ if (quantityBlocks) {
 } // Изменение цены в корзине
 
 
-var cartItems = document.querySelectorAll('.cart-1__item');
+var cartItems = Array.from(document.querySelectorAll('.cart-1__item'));
 
-if (cartItems) {
+if (cartItems.length > 0) {
   var fullSum = document.querySelector('.cart-1__checkout-overall');
   var allSum = document.querySelectorAll('.cart-1__item-sum');
   fullSum.textContent = "".concat(Array.from(allSum).reduce(function (sum, current) {
     return sum + parseInt(current.textContent);
   }, 0), " \u20BD");
-  Array.from(cartItems).forEach(function (item) {
+  cartItems.forEach(function (item) {
     var productRemove = item.querySelector('.cart-1__item-remove');
     productRemove.addEventListener('click', function (evt) {
       evt.preventDefault();

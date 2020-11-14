@@ -509,14 +509,8 @@
     }
   }
 
-  .cards__price {
-    margin-left: 138px;
-    margin-top: -78px;
-    @include my-font-setting(28px, 42px, 700);
-  }
-
   .cards__button-in-cart {
-    margin-top: 36px;
+    margin-top: 32px;
   }
 }
 
@@ -573,10 +567,5 @@
     &--quantity {
       margin-top: 8px;
     }
-  }
-
-  .cards__price {
-    margin-top: -80px;
-    @include my-font-setting(28px, 42px, 700);
   }
 }

@@ -74,14 +74,14 @@ if (quantityBlocks) {
 }
 
 // Изменение цены в корзине
-let cartItems = document.querySelectorAll('.cart-1__item')
+let cartItems = Array.from(document.querySelectorAll('.cart-1__item'));
 
-if (cartItems) {
+if (cartItems.length > 0) {
     let fullSum = document.querySelector('.cart-1__checkout-overall');
     const allSum = document.querySelectorAll('.cart-1__item-sum');
     fullSum.textContent = `${Array.from(allSum).reduce((sum, current) => sum + parseInt(current.textContent), 0)} ₽`;
 
-    Array.from(cartItems).forEach((item) => {
+    cartItems.forEach((item) => {
         const productRemove = item.querySelector('.cart-1__item-remove');
 
         productRemove.addEventListener('click', function (evt) {
