@@ -285,6 +285,7 @@
     }
   }
 
+  input,
   &__order-input {
     height: 42px;
     padding: 5px 11px;
@@ -338,6 +339,8 @@
     border-radius: 3px;
     background: $color-blue;
     box-shadow: 0 3px 20px rgba(46, 51, 63, 0.35);
+
+    padding: 0;
 
     &:hover,
     &:focus {
