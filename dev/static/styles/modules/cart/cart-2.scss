@@ -377,11 +377,12 @@
     margin-bottom: 33px;
     @include my-font-setting(20px, 30px, 700, $color-black, $font-primary);
 
-    & button {
+    & a {
       position: relative;
       margin-top: 5px;
       padding: 0 0 0 34px;
       @include my-font-setting(16px, 24px, 400, $color-grey, $font-alt);
+      text-decoration: none;
       border: none;
       background: transparent;
       box-shadow: none;
