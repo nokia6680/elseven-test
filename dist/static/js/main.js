@@ -194,13 +194,12 @@ window.onload = function () {
   if (table) {
     var bodyBlockElements = Array.from(document.querySelectorAll('.body-block'));
     var headText = Array.from(document.querySelectorAll('.body-head'));
-    var tableAsideText = Array.from(document.querySelectorAll('.table-aside'));
+    var tableAsideText = Array.from(document.querySelectorAll('.title-block'));
     var popupButtons = Array.from(document.querySelectorAll('.body-content button'));
     var asideDimensions = table.querySelector('.title-dimensions');
     var data = {
       tableMini: false
     };
-    var indexModifier = 1;
     var currentElement = null;
     var parentElement = null;
     var indexColElement = null;
@@ -208,7 +207,6 @@ window.onload = function () {
 
     if (table.classList.contains('table-mini')) {
       data.tableMini = true;
-      indexModifier = 0;
       data.asideTitle = table.querySelector('.aside-empty-title .title-main').textContent;
     } else {
       data.asideTitle = table.querySelector('.title-main').textContent;
@@ -241,7 +239,7 @@ window.onload = function () {
       });
       bodyBlockElements.forEach(function (item, index) {
         if (item === parentElement) {
-          indexRowElement = index + indexModifier;
+          indexRowElement = index;
         }
       });
       bodyBlockElements.forEach(function (item) {
@@ -251,12 +249,10 @@ window.onload = function () {
           }
         });
       });
-      tableAsideText.forEach(function (item) {
-        item.childNodes.forEach(function (item, index) {
-          if (index === indexRowElement) {
-            item.classList.add('hover');
-          }
-        });
+      tableAsideText.forEach(function (item, index) {
+        if (index === indexRowElement) {
+          item.classList.add('hover');
+        }
       });
     });
     popupButtons.forEach(function (item) {
@@ -308,12 +304,10 @@ window.onload = function () {
           }
         });
       });
-      tableAsideText.forEach(function (item) {
-        item.childNodes.forEach(function (item, index) {
-          if (index === indexRowElement) {
-            item.classList.remove('hover');
-          }
-        });
+      tableAsideText.forEach(function (item, index) {
+        if (index === indexRowElement) {
+          item.classList.remove('hover');
+        }
       });
       currentElement = null;
       parentElement = null;
