@@ -185,7 +185,7 @@ function modalOpen(data) {
     var modalDescriptionInput = modal.querySelector('input[name=description]');
     var modalPrice = modal.querySelector('.cards-modal__price');
     var modalPriceInput = modal.querySelector('input[name=price]');
-    var modalSubmitButton = modal.querySelector('button[type=submit]');
+    var modalSubmitButton = modal.querySelector('.cards-modal__form button');
     var overlay = document.querySelector('.overlay');
     var body = document.querySelector('body');
 
