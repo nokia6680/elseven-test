@@ -50,12 +50,13 @@ mixin pagination(...items)
 			li.pagination__item
 				a(href="#" target="_self").pagination__link=i
 		
-mixin cart-item(image, name, info, quantity, price)
+mixin cart-item(frame, image, name, info, quantity, price)
 	li.cart-1__item
 		.cart-1__item-details
-			img(src="static/images/content/" +image + '.jpg' alt="" +name).cart-1__item-img
+			picture(class="cart-1__item-frame " +frame)
+				img(src="static/images/content/" +image + '.jpg' alt="" +name).cart-1__item-img
 			.cart-1__item-info
-				h3.cart-1__item-name=name
+				a(href="#" target="_self").cart-1__item-name=name
 				span.cart-1__item-specs=info
 		.cart-1__item-bottom
 			.cart-1__item-quantity.cards__input-quantity

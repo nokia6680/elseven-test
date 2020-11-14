@@ -32,14 +32,18 @@
 
     &__list {
         width: 100%;
+        max-width: 270px;
 
         margin-bottom: 1.5rem;
 
         border-bottom: 3px solid $color-grey;
+
+        @include flex-setting(column, flex-start, center);
     }
 
     &__item {
         width: 100%;
+        max-width: 270px;
 
         @include flex-setting(column, flex-start, flex-start);
 
@@ -60,6 +64,28 @@
             margin-bottom: 1rem;
         }
 
+        &-frame {
+            width: 100%;
+            height: 100%;
+            max-height: 70px;
+            min-height: 70px;
+            max-width: 105px;
+
+            @include flex-setting(column, center, center);
+
+            &.noimage {
+                background-color: $color-white;
+                background-image: url("data:image/svg+xml,%3Csvg width='57' height='57' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M50.473.351H6.906C3.482.351.682 3.151.682 6.575v43.567c0 3.423 2.8 6.224 6.224 6.224h43.567c3.423 0 6.224-2.8 6.224-6.224V6.575c0-3.423-2.8-6.224-6.224-6.224zm0 6.224v43.567H6.906V6.575h43.567zm-24.46 33.391l9.336-12.043L47.36 43.918H10.018l9.335-12.012 6.66 8.06z' fill='%23000' fill-opacity='.54'/%3E%3C/svg%3E");
+                background-position: 50% 50%;
+                background-repeat: no-repeat;
+                background-size: 50px 50px;
+
+                .cart-1__item-img {
+                    display: none;
+                }
+            }
+        }
+
         &-img {
             max-width: 103px;
             min-width: 103px;
@@ -75,6 +101,9 @@
             @include font-setting($font-alt, 0.875rem, 1.25rem, 700, $color-black);
 
             margin-bottom: 0.25rem;
+            text-decoration: none;
+            cursor: pointer;
+            outline: none;
         }
 
         &-specs {
@@ -147,6 +176,7 @@
 
             border: none;
             background-color: transparent;
+            box-shadow: none;
 
             padding: 0;
 
@@ -190,6 +220,7 @@
             }
         }
 
+        input,
         &-input {
             width: 100%;
             border: none;
@@ -226,6 +257,10 @@
             margin-right: 0;
 
             background-color: transparent;
+            box-shadow: none;
+            border-radius: 0;
+            padding: 0;
+
             border: none;
 
             cursor: pointer;
@@ -236,7 +271,10 @@
             background-size: 14px 12px;
             transition: 0.2s linear;
 
-            &:hover {
+            &:hover,
+            &:active {
+                box-shadow: none;
+                background-color: transparent;
                 background-image: url("data:image/svg+xml,%3Csvg width='14' height='12' viewBox='0 0 14 12' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M9 0C9.55229 0 10 0.447715 10 1V2H13C13.5523 2 14 2.44772 14 3C14 3.55228 13.5523 4 13 4H12V9C12 10.6569 10.8807 12 9.5 12H4.5C3.11929 12 2 10.6569 2 9V4H1C0.447715 4 0 3.55228 0 3C0 2.44772 0.447715 2 1 2H4V1C4 0.447715 4.44772 0 5 0H9ZM5 4C4.48716 4 4.06449 4.38604 4.00673 4.88338L4 5V9C4 9.55229 4.44772 10 5 10C5.51284 10 5.93551 9.61396 5.99327 9.11662L6 9V5C6 4.44772 5.55228 4 5 4ZM9 4C8.48716 4 8.06449 4.38604 8.00673 4.88338L8 5V9C8 9.55229 8.44771 10 9 10C9.51284 10 9.93551 9.61396 9.99327 9.11662L10 9V5C10 4.44772 9.55229 4 9 4Z' fill='%231F2528' opacity='0.8' /%3E%3C/svg%3E%0A");
                 transition: 0.2s linear;
             }
@@ -279,7 +317,7 @@
             @include font-setting($font-alt, 1rem, 1.5rem, 500, $color-white);
 
             padding: 0.567rem 1rem;
-
+            text-decoration: none;
             background-color: $color-blue;
             border: none;
             border-radius: 3px;
@@ -346,10 +384,12 @@
 
         &__list {
             margin-bottom: 2rem;
+            max-width: 100%;
         }
 
         &__item {
             width: 100%;
+            max-width: 100%;
 
             flex-direction: row;
             justify-content: space-between;
@@ -380,11 +420,14 @@
                 position: relative;
             }
 
+            &-frame {
+                max-width: 103px;
+            }
+
             &-img {
                 grid-area: photo;
                 max-width: 103px;
                 min-width: 103px;
-                margin-right: 2rem;
             }
 
             &-info {
@@ -493,10 +536,6 @@
             &-details {
                 grid-template-columns: 103px 283px;
                 grid-column-gap: 2rem;
-                margin-right: 0;
-            }
-
-            &-img {
                 margin-right: 0;
             }
 

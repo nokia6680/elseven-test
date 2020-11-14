@@ -14,11 +14,11 @@ section.cart.cart-1
                 b.cart-1__upper-name.fourth Цена
                 b.cart-1__upper-name.fifth Итого
         ul.cart-1__list
-            +cart-item('category-1', 'Форма тостерная №9', '(198 x 113 x 93), 3 формы с ручками в секции', '1', '250 ₽')
-            +cart-item('category-1', 'Форма тостерная №9', '(198 x 113 x 93), 3 формы с ручками в секции', '1', '250 ₽')
+            +cart-item('noimage', 'category-1', 'Форма тостерная №9', '(198 x 113 x 93), 3 формы с ручками в секции', '1', '250 ₽')
+            +cart-item('', 'category-1', 'Форма тостерная №9', '(198 x 113 x 93), 3 формы с ручками в секции', '1', '250 ₽')
         .cart-1__checkout
             .cart-1__checkout-info
                 h3.cart-1__checkout-final Итого:
                     span.cart-1__checkout-overall 6 250 ₽
                 span.cart-1__checkout-weight Общий вес: 7,08 кг
-            button(type="submit").cart-1__checkout-btn Оформить заказ
+            a(href="#" target="_self").cart-1__checkout-btn Оформить заказ

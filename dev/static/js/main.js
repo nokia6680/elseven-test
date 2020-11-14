@@ -35,13 +35,13 @@ for (var i = 0; i < upperItem.length; i++) {
     });
 };
 
-var priceOpener = document.querySelector('.filter__price-open');
-var priceOverlay = document.querySelector('.filter__price-body');
+var sortOpener = document.querySelector('.filter__sort-type');
+var sortOverlay = document.querySelector('.filter__sort-list');
 
-if (priceOpener) {
-    priceOpener.addEventListener('click', function () {
-        priceOverlay.classList.toggle('active');
-        priceOpener.classList.toggle('active');
+if (sortOpener) {
+    sortOpener.addEventListener('click', function () {
+        sortOverlay.classList.toggle('active');
+        sortOpener.classList.toggle('pressed');
         return false;
     });
 };
@@ -351,5 +351,3 @@ $(document).ready(function() {
     });
 
 });
-
-
