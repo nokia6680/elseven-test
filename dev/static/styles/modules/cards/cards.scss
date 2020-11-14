@@ -218,14 +218,6 @@
     width: 292px;
   }
 
-  &--thickness {
-    width: 100%;
-
-    & span.cards__filter-tag {
-      margin-bottom: 20px;
-    }
-  }
-
   & p {
     @include my-font-setting(16px, 24px, 400);
   }
@@ -235,16 +227,8 @@
     width: 245px;
   }
 
-  &--circle-diameter {
-    width: 144px;
-
-    & span.cards__filter-tag {
-      margin-bottom: 20px;
-    }
-  }
-
-  &--height-text {
-    width: 51px;
+  &--text {
+    width: auto;
 
     & span.cards__filter-tag {
       margin-bottom: 20px;
@@ -492,8 +476,12 @@
 
   .cards__filter-input {
     &:not(:last-of-type) {
-      margin-right: 0;
+      //margin-right: 0;
     }
+
+    &:last-of-type {
+    margin-right: 24px;
+  }
 
     &--side-height,
     &--side-quantity,

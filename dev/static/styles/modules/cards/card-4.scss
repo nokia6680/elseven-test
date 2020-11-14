@@ -17,15 +17,6 @@
     & .cards__filter-wrapper {
       flex-flow: row wrap;
     }
-
-    & .cards__filter-input {
-      &--height {
-        margin-right: 0;
-      }
-      &--diameter {
-        margin-right: 32px;
-      }
-    }
   }
 }
 

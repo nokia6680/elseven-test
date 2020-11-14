@@ -8,14 +8,6 @@
     flex-flow: row wrap;
     margin-bottom: 0;
   }
-
-  & .cards__filter-input {
-    margin-right: 41px;
-
-    &--thickness {
-      width: 60px;
-    }
-  }
 }
 
 @media (max-width: $laptop-sm) {
@@ -31,19 +23,7 @@
   }
 
   .card-3 .cards__filter-input {
-    margin-right: 41px;
-
-    &--thickness {
-      width: 60px;
-    }
-
-    &--height-text {
-      margin-right: 50px;
-    }
-
-    &--quantity {
-      margin-right: 0;
-    }
+    margin-right: 24px;
   }
 }
 
@@ -54,17 +34,10 @@
 
   .card-3 {
     & .cards__filter-input {
-      margin-right: 0;
-
-      &--circle-diameter {
-        margin-right: 41px;
-      }
-
-      &--height-text {
-        margin-right: 150px;
-      }
+      margin-right: 24px;
 
       &--quantity {
+        margin-top: 0;
         margin-right: 0;
       }
     }
