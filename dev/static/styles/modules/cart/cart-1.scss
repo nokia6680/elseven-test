@@ -335,7 +335,8 @@
                 transition: 0.2s linear;
             }
 
-            &:visited {
+            &:visited,
+            &:visited:hover {
                 color: $color-white;
             }
 
