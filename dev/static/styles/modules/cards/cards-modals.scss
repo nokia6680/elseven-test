@@ -34,7 +34,7 @@
   @include my-font-setting(28px, 42px, 700, $color-black, $font-alt);
 }
 
-.cards-modal__form {
+.cards-modal .cards-modal__form {
   display: flex;
   align-items: flex-end;
   align-content: flex-end;
@@ -109,7 +109,7 @@
   color: gray;
 }
 
-.modal-form__form button[type="submit"] {
+.cards-modal .modal-form__form button {
   background: #7cc576;
   border: 0;
   padding: 10px 24px;
@@ -118,11 +118,11 @@
   border-radius: 4px;
 }
 
-.modal-form__form button[type="submit"]:hover {
+.cards-modal .modal-form__form button:hover {
   background: #61b959;
 }
 
-.modal-form__close-button {
+.cards-modal .modal-form__close-button {
   position: absolute;
   top: 21px;
   right: 27px;
@@ -131,15 +131,17 @@
   height: 14px;
   border: none;
   background-color: transparent;
+  box-shadow: none;
   cursor: pointer;
 
   &:hover,
   &:focus {
+    box-shadow: none;
+    outline: none;
     &::after,
     &::before {
       background-color: $color-blue;
     }
-    outline: none;
   }
 
   &:active {
