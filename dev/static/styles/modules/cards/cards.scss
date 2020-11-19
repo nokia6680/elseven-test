@@ -124,10 +124,23 @@
   }
 
   & .cards__filter-tag {
-    display: block;
-    width: 100%;
+    display: inline-flex;
+    width: auto;
     margin-bottom: 19px;
     @include my-font-setting(14px, 20px, 700);
+  }
+
+  & .cards__filter-input--text {
+      width: auto;
+      display: flex;
+      flex-flow: column nowrap;
+      justify-content: flex-start;
+      align-items: flex-start;
+
+      p {
+          width: auto;
+          display: inline-flex;
+      }
   }
 
   & .cards__filter-group {
@@ -208,6 +221,7 @@
 
   &--quantity {
     width: 105px;
+    margin-bottom: 0;
   }
 
   &--forms-in-section {
@@ -427,6 +441,8 @@
   box-shadow: 0 3px 20px rgba(46, 51, 63, 0.35);
   cursor: pointer;
 
+  margin-bottom: 2rem;
+
   &:hover,
   &:focus {
     background: $blue-hover;
@@ -444,6 +460,10 @@
   }
 }
 
+.cards__description {
+    @include font-setting($font-alt, 1rem, 1.5rem, 400, $color-black);
+}
+
 @media (max-width: $laptop-sm) {
   .cards {
     border-bottom: none;
@@ -452,6 +472,10 @@
   .cards-container {
     width: 768px;
     padding: 0 31px;
+  }
+
+  .cards__price {
+      margin-left: 2rem;
   }
 
   .cards__img-frame,
@@ -475,13 +499,11 @@
   }
 
   .cards__filter-input {
-    &:not(:last-of-type) {
-      //margin-right: 0;
-    }
+    margin-right: 0;
 
-    &:last-of-type {
-    margin-right: 24px;
-  }
+    &:not(:last-of-type) {
+      margin-right: 0;
+    }
 
     &--side-height,
     &--side-quantity,
@@ -493,12 +515,16 @@
 
   .cards__filter {
     & .cards__filter-wrapper {
-      flex-flow: column;
+        flex-flow: row;
+        flex-wrap: wrap;
+        align-items: flex-end;
+        justify-content: flex-start;
     }
   }
 
   .cards__button-in-cart {
     margin-top: 32px;
+    margin-bottom: 2rem;
   }
 }
 
@@ -536,6 +562,25 @@
     }
   }
 
+  .cards__filter {
+      &-wrapper {
+          flex-flow: row;
+          flex-wrap: wrap;
+          align-items: flex-end;
+          justify-content: flex-start;
+      }
+  }
+
+  .cards__button-in-cart {
+      margin-bottom: 2rem;
+  }
+
+  .cards__price {
+      display: inline-flex;
+      height: auto;
+      margin-left: 2rem;
+  }
+
   .cards__label-radio {
     margin-bottom: 24px;
   }
@@ -554,6 +599,7 @@
 
     &--quantity {
       margin-top: 8px;
+      margin-bottom: 0;
     }
   }
 }

@@ -15,6 +15,11 @@
 }
 
 @media (max-width: $laptop-sm) {
+    .card-5 {
+        .cards__filter-tag {
+            width: 100%;
+        }
+    }
   .card-5 .cards__filter-input {
     &--form-type {
       display: flex;
@@ -65,5 +70,3 @@
     }
   }
 }
-
-

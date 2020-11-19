@@ -8,7 +8,28 @@
   }
 }
 
+.card-4 {
+    .cards__filter-input--thickness {
+        width: 100%;
+    }
+}
+
 @media (max-width: $laptop-sm) {
+    .card-4 {
+        .cards__filter-input--thickness {
+            width: 100%;
+        }
+
+        .cards__filter-input--diameter {
+            width: 214px;
+        }
+
+        .cards__filter-input--height {
+            width: 214px;
+            margin-left: auto;
+            margin-right: 0;
+        }
+    }
   .cards.card-4 {
     padding-bottom: 55px;
   }
@@ -39,5 +60,3 @@
     }
   }
 }
-
-

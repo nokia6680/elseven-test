@@ -27,6 +27,11 @@
       margin-bottom: 16px;
     }
 
+    &--quantity {
+        margin-bottom: 0;
+        margin-right: 2rem;
+    }
+
     & .selectric {
       width: 337px;
       margin-right: 32px;
@@ -40,12 +45,17 @@
 }
 
 @media (max-width: $tablet) {
+    .card-1 {
+        .cards__filter-input--quantity {
+            margin-right: 2rem;
+        }
+    }
   .cards.card-1 {
     padding-bottom: 64px;
   }
 
   .card-1 .cards__filter-input {
-    margin-bottom: 33px;
+    margin-bottom: 0;
 
     &--forms-in-section,
     &--form-type {
