@@ -131,15 +131,17 @@
   height: 14px;
   border: none;
   background-color: transparent;
+  box-shadow: none;
   cursor: pointer;
 
   &:hover,
   &:focus {
+    box-shadow: none;
+    outline: none;
     &::after,
     &::before {
       background-color: $color-blue;
     }
-    outline: none;
   }
 
   &:active {
