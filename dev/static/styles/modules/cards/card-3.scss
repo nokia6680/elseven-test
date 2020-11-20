@@ -7,24 +7,6 @@
   & .cards__filter-wrapper {
     flex-flow: row wrap;
     margin-bottom: 0;
-    justify-content: flex-start;
-    align-items: flex-end;
-  }
-
-  .cards__filter-block {
-      width: 100%;
-      display: flex;
-      flex-flow: row nowrap;
-      justify-content: flex-start;
-      align-items: flex-start;
-  }
-
-  .cards__filter-input--quantity {
-      margin-bottom: 2rem;
-  }
-
-  .cards__price {
-      width: 100%;
   }
 }
 
@@ -38,27 +20,11 @@
     & .cards__availability {
       margin-bottom: 31px;
     }
-
-    .cards__price {
-        width: auto;
-    }
-
-    .cards__filter-input--quantity {
-        margin-bottom: 0;
-        margin-right: 0;
-    }
   }
 
   .card-3 .cards__filter-input {
     margin-right: 24px;
   }
-
-  .card-3 .cards__filter-block {
-        width: 100%;
-        flex-flow: row nowrap;
-        justify-content: flex-start;
-        align-items: flex-start;
-    }
 }
 
 @media (max-width: $tablet) {
@@ -76,11 +42,4 @@
       }
     }
   }
-  .card-3 .cards__filter-block {
-        width: 100%;
-        display: flex;
-        flex-flow: row wrap;
-        justify-content: flex-start;
-        align-items: flex-start;
-    }
 }
