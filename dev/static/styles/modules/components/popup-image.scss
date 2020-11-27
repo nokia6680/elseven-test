@@ -40,11 +40,12 @@
 
   &:hover,
   &:focus {
+    box-shadow: none;
+    outline: none;
     &::after,
     &::before {
       background-color: $color-blue;
     }
-    outline: none;
   }
 
   &:active {

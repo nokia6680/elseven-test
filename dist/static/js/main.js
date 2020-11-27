@@ -323,7 +323,7 @@ window.onload = function () {
 
 
 $(document).ready(function () {
-  $(".title-img, .cards__img").on('click tab', function () {
+  $(".title-img, .cards__img").click(function () {
     var img = $(this);
     var src = img.attr('src');
     $("body").append("<div class='popup-image'>" + "<div class='popup-image__bg'></div>" + "<div class='popup-image__wrapper'><img class='popup-image__pic' src=" + src + "><button class='popup-image__close-button' type='button'><span class='visually-hidden'>Закрыть окно</span></button></div>" + "</div>");
