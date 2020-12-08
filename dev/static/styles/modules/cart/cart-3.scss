@@ -29,6 +29,42 @@
         text-decoration: none;
         color: $color-blue;
     }
+
+    &__payment {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        align-content: center;
+        margin-top: 2.25rem;
+    }
+
+    &__payment-button {
+        width: 158px;
+        height: 42px;
+        @include my-font-setting(16px, 24px, 500, $color-white, $font-alt);
+        border: none;
+        border-radius: 3px;
+        background: $color-blue;
+        box-shadow: 0 3px 20px rgba(46, 51, 63, 0.35);
+
+        padding: 0;
+
+        &:hover,
+        &:focus {
+            background: $blue-hover;
+            outline: none;
+        }
+
+        &:active {
+            opacity: 0.6;
+        }
+
+        &.disabled {
+            color: rgba(31, 37, 40, 0.5);
+            background: rgba(152, 160, 170, 0.15);
+            box-shadow: none;
+        }
+    }
 }
 
 @media only screen and (min-width: $tablet) {
